@@ -1,0 +1,2 @@
+# Glosur
+Hinar ýmsu glósur
