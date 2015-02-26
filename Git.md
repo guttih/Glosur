@@ -8,7 +8,7 @@ git clone https://github.com/dthgs/what_sub.git
  
 //setja global email og user með þessu
  
-git config --global user.email "gudjonholm@gmail.com"
+git config --global user.email "youremal@gmail.com"
  
 git config --global user.name "guttih"
  
