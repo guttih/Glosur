@@ -30,4 +30,4 @@ This
 ```
 returns this \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
 
-This rambling is made by @guttih and I am testing @ sign in middle of a sentince
+Testing the at sign @guttih middle of a Sentence.
