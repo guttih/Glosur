@@ -30,4 +30,4 @@ This
 ```
 returns this \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
 
-Testing the at sign @guttih middle of a Sentence.
+Testing the at sign @guttih in a middle of a ssentence.
