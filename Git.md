@@ -54,3 +54,8 @@ https://github.com/dthgs/project_Skjatexti
 ★     git clone git@github.com:danielbsig/TestApp.git - Klónar projectið / Tekur afrit af kóðanum / Býr til projectið inná GitHub
 ★     git merge master - Tekur inn breytingar á master, í branch-ið
 
+
+#ssh
+To change beetwen two ssh files saved in config ssh -T bitbuc
+f.example if host was bitbuc then this would change to that profile
+we are talking about the file ~/.ssh/config
