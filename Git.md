@@ -41,8 +41,8 @@ git pull origin master
 ```
 
 
-Git glósur 2
- ==========
+### Git glósur 2   ------------------
+
 hægri-smella á möppuna í explorer sem projectið á að vistast í og velja git-bash here
  
 skrifa í gluggann
