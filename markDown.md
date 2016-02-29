@@ -15,27 +15,7 @@
 [Syntax highligting](https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown)
 
 ##Escape
- ```
-\   backslash
-`   backtick
-*   asterisk
-_   underscore
-{}  curly braces
-[]  square brackets
-()  parentheses
-#   hash mark
-+   plus sign
--   minus sign (hyphen)
-.   dot
-!   exclamation mark
-```
-
-For example:
-This
- ```
- \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
-```
-returns this \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
+This: ``` \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! ``` returns this: \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
 
 For showing code for a specific language you start by adding<br>
 \`\`\`language<br>
