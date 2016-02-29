@@ -6,6 +6,8 @@
 
 ##Links
 [Mastering markdown](https://guides.github.com/features/mastering-markdown/)
+ and
+[Syntax highligting](https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown)
 
 ##Escape
  ```
@@ -53,7 +55,8 @@ for(int i = 0 ; i<10; i++)
  printf("item %i = %s", i, arr[i]);
 
 ```
-\`\`\`cs <i>(For C# )</i>
+\`\`\`cs or \`\`\`csharp <i>(For C# )</i>
 ```cs
 Console.WriteLine("Fenced code blocks ftw!");
 ```
+``` csharp private void index(){ MessageBox.Show("hello world"); } ``` 
