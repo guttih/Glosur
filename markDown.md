@@ -31,7 +31,7 @@ cat file.txt
 \`\`\`js <i>(For JavaScript)</i><br>
 ```js
 var s = "JavaScript syntax highlighting";
-for(int i = 0 ; i<10; i++){
+for(var i = 0 ; i<10; i++){
  console.log("item " + i + " = " + arr[i]);
 }
 ```
