@@ -33,7 +33,7 @@ This
 returns this \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
 
 For showing code for a specific language you start by adding<br>
-\`\`\` language<br>
+\`\`\`language<br>
 your code here<br>
 and end by adding <br>
 \`\`\`<br>
@@ -55,7 +55,7 @@ for(int i = 0 ; i<10; i++)
  printf("item %i = %s", i, arr[i]);
 
 ```
-\`\`\`cs or \`\`\`csharp <i>(For C# )</i>
+\`\`\`cs <i> or </i> \`\`\`csharp <i>(For C# )</i>
 ```cs
 Console.WriteLine("Fenced code blocks ftw!");
 private void index(){ MessageBox.Show("hello world"); }
