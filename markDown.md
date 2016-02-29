@@ -17,6 +17,7 @@
 ##Escape
 This: ``` \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! ``` returns this: \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
 
+##Code
 For showing code for a specific language you start by adding<br>
 \`\`\`language<br>
 your code here<br>
