@@ -47,7 +47,8 @@ for(int i = 0 ; i<10; i++){
  console.log("item " + i + " = " + arr[i]);
 }
 ```
-``` c <i>(For c )</i><br>
+\`\`\` cpp <i>(For cpp)</i>
+```cpp
 for(int i = 0 ; i<10; i++)
  printf("item %i = %s", i, arr[i]);
 
