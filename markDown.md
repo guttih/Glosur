@@ -36,20 +36,24 @@ your code here<br>
 and end by adding <br>
 \`\`\`<br>
 
-\`\`\` shell   <i>(For Command line linux and dos)</i><br>
+\`\`\`shell   <i>(For Command line linux and dos)</i><br>
 ```shell
 cat file.txt
 ```
-\`\`\` js <i>(For JavaScript)</i><br>
-``` js
+\`\`\`js <i>(For JavaScript)</i><br>
+```js
 var s = "JavaScript syntax highlighting";
 for(int i = 0 ; i<10; i++){
  console.log("item " + i + " = " + arr[i]);
 }
 ```
-\`\`\` cpp <i>(For cpp)</i>
+\`\`\`cpp <i>(For cpp)</i>
 ```cpp
 for(int i = 0 ; i<10; i++)
  printf("item %i = %s", i, arr[i]);
 
+```
+\`\`\`cs <i>(For C# )</i>
+```cs
+Console.WriteLine("Fenced code blocks ftw!");
 ```
