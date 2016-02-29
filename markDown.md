@@ -1,10 +1,15 @@
-#Notes about Markdown
-##Subtitle
-###second subtitle
-####third sub
-#####fourth
+#Notes about Markdown 
+#Heading \#heading
+##Subtitle \#\# subtitle
+###second subtitle \#\#\#second subtitle
+####third sub \#\#\#\#third sub
+#####fourth \#\#\#\#\#fourth sub
+
+##Force linebreak
+\<br\>
 
 ##Links
+\[text\](link)<br>
 [Mastering markdown](https://guides.github.com/features/mastering-markdown/)
  and
 [Syntax highligting](https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown)
