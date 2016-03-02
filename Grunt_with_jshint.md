@@ -34,9 +34,12 @@ Quick setup guide to make jsHint review the javascript code in your project.  In
     };
     ```
 4. Install grunt into the folder and the jshint plugin
-    ```
+    ```shell
     npm install -g grunt-cli
     npm install grunt-contrib-jshint --save-dev
-    ```
+    ```    
+   
+   
+    
 5. Run grunt with jshint
   * Type `grunt`
