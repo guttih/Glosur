@@ -1,7 +1,7 @@
 #Grunt#
 
 ##jsHint
-Quick setup guide to make jsHint review your code
+Quick setup guide to make jsHint review your code.  In order to be able to use grunt you will need to have Nodejs installed.  You can download it from [Here](https://nodejs.org/en/download/)
 #####Files in project folder before beginning
 ```
 .
