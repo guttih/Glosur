@@ -2,7 +2,6 @@
 setlocal enableextensions enabledelayedexpansion
 rem set gradingDir=..\out\58677
 rem set gradingCopyToDir=\src\login
-rem set gradingCopyToDir=\src\login
 rem set gradingFile=LoginController.spec.js
 set submission=%1
 set gradingDir=%2
