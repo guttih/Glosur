@@ -43,3 +43,40 @@ Quick setup guide to make jsHint review the javascript code in your project.  In
     
 5. Run grunt with jshint
   * Type `grunt`
+  
+And lastly here you find a gruntfile with jshint options
+```js
+module.exports = function(grunt) {
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+  jshint: {
+    all: ['src/*.js', 'src/**/*.js'],
+	 options: {
+				curly:  true,
+				immed:  true,
+				newcap: true,
+				noarg:  true,
+				sub:    true,
+				boss:   true,
+				eqnull: true,
+				node:   true,
+				undef:  true,
+				globals: {
+					_:       false,
+					jQuery:  false,
+					angular: false,
+					moment:  false,
+					console: false,
+					$:       false,
+					io:      false
+				}
+    }
+  }
+  });
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  // Default task(s).
+  grunt.registerTask('default', ['jshint']);
+};
+```
