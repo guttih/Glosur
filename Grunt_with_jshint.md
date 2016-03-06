@@ -51,7 +51,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
   jshint: {
-    all: ['src/*.js', 'src/**/*.js'],
+    all: ['Gruntfile.js', 'js/**/*.js'],
 	 options: {
 				curly:  true,
 				immed:  true,
