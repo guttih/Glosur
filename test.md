@@ -42,7 +42,7 @@ Styles for both projects.
 The AceFactory.js has a function called supportedFileType which is copied and used by the centrislms when determining 
 if an attachment file type is supported or not.
 
-##Mooshak code viewer
+#Mooshak code viewer
 This project was created to view code and run-reports from assignments which students hand in to Mooshak.  Mooshak is a server which can be used to verify correct code, review it using predefined programming rules and grade handins from students.  It is not always enough to make Mooshak handle the grading blindly.  A human is usually needed to do the final code review.  This project was created to help with one aspect of that.  The viewing itself.  Three other components were developed before this one could be developed.  CentMoose, a node server running on the Mooshak server.  A plugin-controller on in the the CentrisApi project and a plugin in the cetrislms which talks to the CentrisAPI.
 
 ##Launch the Mooshak code viewer
@@ -74,7 +74,7 @@ Styles to style the actual report from Mooshak, styles can be done better but I 
 ####index.html
 This is a single page app.  One call to this page with parameters will load the code and report.
 
-##Code reviewer
+#Code reviewer
 This project was developed to be able to view code handed in by students.  The project will also allow teachers to comment on that code and allow the student to view those comments.  There are many files supported files with syntax highlighting.  You can see the supported file type in thec function supportedFileType located in the AceFactory.js.
 
 ##Launch the Mooshak code viewer
