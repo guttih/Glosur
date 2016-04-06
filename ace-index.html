@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="aceApp">
+<head>
+	<meta charset="utf-8" />
+	<title>UI.Ace : demo </title>
+	<!-- Le css -->
+	<link rel="stylesheet" type="text/css" href="src/styles/style.css"/>
+	<link rel="stylesheet" type="text/css" href="src/mooshak/styleMoosakReport.css"/>
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/angular-toastr.min.css" />
+	<link rel="stylesheet" href="../styles/vendor.css">
+	<link rel="stylesheet" href="../styles/app.css">
+</head>
+<body>
+	<div ng-controller="MooshakCodeReview">
+		<div class="row vertical-center-row">
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<h4>
+						<span uib-tooltip = "The contest on Mooshak">
+							<span class="glyphicon glyphicon-briefcase"></span> {{contest}}
+						</span>
+						&nbsp;&nbsp;&nbsp;
+						<span uib-tooltip = "The problem on Mooshak">
+							<span class="glyphicon glyphicon-wrench"></span> {{problem}}
+						</span>
+					</h4>
+				</div>
+				<div class="col-md-6">
+					<h4 class="pull-right">
+						<span uib-tooltip = "The student who submitted this code">
+							<span class="glyphicon glyphicon-user"></span> {{user}}
+						</span>
+						&nbsp;&nbsp;&nbsp; 
+						<span uib-tooltip = "Grade from Mooshak">
+							<span class="glyphicon glyphicon-education"></span>
+							<span class="{{gradeClass}}" style="border-radius: 5px;padding-left: 5px;padding-right: 5px;border-radius: 5px;">
+								{{grade}}
+							</span>
+						</span>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<div class="ace-shadow">
+			<div class="row text-center">
+				<div ng-show="fileNames.length > 1" class="form-inline col-md-12 bottom-controls">
+					<div class="control-group">
+						<label class="control-label"><strong>File:</strong></label>
+						<select class="form-control"
+								ng-model="selectedItem" 
+								ng-change="OnFileSelectChange()"
+								ng-options="file.name for file in fileNames">
+						</select>
+					</div>
+				</div>
+				<div ng-show="fileNames.length === 1" class="text-center">
+					<h4>{{selectedItem.name}}</h4> 
+				</div>
+			</div>
+			<div>
+			<div ng-model="aceValue" ui-ace="{onLoad : aceLoaded}"></div>
+			<div class="row">
+				<div class="form-inline col-md-12 bottom-controls">
+					<div class="control-group">
+						<div class="col-md-9">
+						<label class="control-label"><strong>Theme:</strong></label>
+							<select class="form-control" ng-model="theme"
+										ng-change="OnThemeSelectChange()"
+										ng-options="item for item in themes">
+							</select>
+						</div>
+						<div class="col-md-3 pull-right">
+							<div class="align-right-10">
+								<label class="control-label">Show whitespace:</label>
+									<input class="checkbox" type="checkbox" ng-model="showInvisible" ng-change="onShowInvisible(showInvisible)">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div>
+		</div>
+		<div class="ace-shadow mooshak-report-class-container">
+			<!-- <h4>Report from Mooshak</h4>  how about skipping this heading-->
+			<div class="mooshak-report-inner">
+				<mooshak-report htmlreport="{{report}}"></mooshak-report>
+			</div>
+		</div>
+	</div>
+	<script src="../src/vendor/angular/angular.min.js"></script>
+	<script src="../src/vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="../src/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="bower_components/angular-ui-ace/ui-ace.min.js"></script>
+	<script src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+	<script src="src/app.js"></script>
+	<script src="bower_components/angular-toastr/angular-toastr.tpls.min.js"></script>
+	<script src="src/common/CentrisAceResource.js"></script>
+	<script src="src/common/AceFactory.js"></script>
+	<script src="src/mooshak/MooshakCodeReview.js"></script>
+	<script src="src/mooshak/mooshakReport.js"></script>
+</body>
+</html>
