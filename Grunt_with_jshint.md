@@ -37,6 +37,7 @@ Quick setup guide to make jsHint review the javascript code in your project.  In
     ```shell
     npm install -g grunt-cli
     npm install grunt-contrib-jshint --save-dev
+    npm install grunt --save-dev
     ```    
    
    
