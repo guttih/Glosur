@@ -1,4 +1,4 @@
-#How to minify ecmascript 6 files
+#How to minify ecmascript 6 files and jshint them
 Jubb
 
 
@@ -40,5 +40,35 @@ gulp.task('minify', function () {
         .pipe(concat('js/paint.js'))
         .pipe(gulp.dest('build'))
 });
+gulp.task('default', ['minify']);
 ```
 
+#### Also checkout
+#### gulp-load-plugins
+[gulp-load-plugins] (https://www.npmjs.com/package/gulp-load-plugins)
+example:
+```
+var gulp = require('gulp'),
+	gulpLoadPlugins = require('gulp-load-plugins'),
+	plugins = gulpLoadPlugins();
+
+gulp.task('buildit', function () {
+	return gulp.src('src/*.js')
+		.pipe(plugins.jshint({
+			esversion: 6,
+			globals: {
+				jQuery: true,
+				"$": true
+			}
+		}))
+		.pipe(plugins.jshint.reporter('default'))
+		.pipe(plugins.babel({
+			presets: ['es2015']
+		}))
+		.pipe(plugins.uglify())
+		.pipe(plugins.concat('app.js'))
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('default', ['buildit']);
+```
