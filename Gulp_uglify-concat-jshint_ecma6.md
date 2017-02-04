@@ -50,14 +50,14 @@ gulp.task('makeBuild', function () {
             presets: ['es2015']
         }))
         .pipe(uglify())
-        .pipe(concat('js/paint.js'))
-        .pipe(gulp.dest('build'))
+        .pipe(concat('js/app.js'))
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('oldjshint', function () {
     gulp.src(sourceFiles)
     .pipe(jshint(jsHintOptions))
-    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter('default'));
 });
 
 gulp.task('jshint', () =>
@@ -66,7 +66,7 @@ gulp.task('jshint', () =>
         .pipe(jshint.reporter('jshint-stylish'))
 );
 
-gulp.task('jsHintAndMakebuild', ['jshint', 'makeBuild'])
+gulp.task('jsHintAndMakebuild', ['jshint', 'makeBuild']);
 gulp.task('default', ['jsHintAndMakebuild']);
 ```
 
