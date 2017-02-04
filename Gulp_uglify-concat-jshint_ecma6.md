@@ -1,5 +1,5 @@
-#How to minify ecmascript 6 files and jshint them
-Jubb
+#How use Gulp to minify, concatenate and verify ecmascript 6 code.
+Here is an example on how you could use gulp to verify and combine, your source code files (written in es6 javascript) into one file.
 
 
 ## install gulp and requred modules
@@ -12,7 +12,7 @@ npm install --save-dev gulp gulp-babel babel-preset-es2015 gulp-concat gulp-ugli
 ```
 
 #####Project folder structure
-I will assume that all your code is in a subfolder called "src" which is located 
+I will assume that all your code is in a subfolder called "src" which is located.
 ```
 .
 +--gulpfile.js
@@ -23,13 +23,14 @@ I will assume that all your code is in a subfolder called "src" which is located
 
 ```
 
-#####Gulp file
-This gulpfile will run two tasks by default "jshint" and "makeBuild"
+####Gulp file
+In the gulpfile listed here belowwill run two tasks by default "jshint" and "makeBuild"
 jshint uses the jshint-stylish reporter, which colorcodes errors making them more readable.
-- To run both tasks type `gulp`
 - To make jshint check your code type type `gulp jshint`
-- To minify and combine all your source files into one file type `gulp makeBuild`
+- To minify and combine all your source files into one file located in the build folder type `gulp makeBuild`
 - To run both tasks type `gulp`
+
+#####gulpfile.js
 ```
 var gulp = require('gulp');
     jshint = require('gulp-jshint');
@@ -69,9 +70,8 @@ gulp.task('jsHintAndMakebuild', ['jshint', 'makeBuild'])
 gulp.task('default', ['jsHintAndMakebuild']);
 ```
 
-#### Also checkout
 #### gulp-load-plugins
-Which loads gulp plugins from package dependencies and attaches them to an object of your choice.
+You could also use this plugin to skip the require sentences at the top of the gruntfile.  This module loads gulp plugins from package dependencies and attaches them to an object of your choice.
 [gulp-load-plugins] (https://www.npmjs.com/package/gulp-load-plugins)
 example:
 ```
