@@ -5,8 +5,9 @@ Jubb
 ## install gulp and requred modules
 cd into you project
 ```
+npm init
 npm install -g gulp
-npm install --save-dev gulp
+npm install --save-dev gulp gulp-babel babel-preset-es2015 gulp-concat gulp-uglify gulp-jshint jshint jshint-stylish
 
 ```
 
@@ -24,6 +25,8 @@ npm install --save-dev gulp
 ```
 
 #####Gulp file
+This gulpfile will run two tasks by default "jshint" and "makeBuild"
+jshint uses the jshint-stylish reporter, which colorcodes errors making them more readable.
 ```
 var gulp = require('gulp');
     jshint = require('gulp-jshint');
@@ -31,8 +34,14 @@ var gulp = require('gulp');
     babel = require('gulp-babel'),
     concat = require('gulp-concat');
 
-gulp.task('minify', function () {
-    gulp.src(['js/*.js', '!node_modules/**/*'])
+var sourceFiles = ['src/*.js', '!node_modules/**/*'];
+
+var jsHintOptions = {
+        esversion: 6
+    };
+
+gulp.task('makeBuild', function () {
+    gulp.src(sourceFiles)
         .pipe(babel({
             presets: ['es2015']
         }))
@@ -40,7 +49,21 @@ gulp.task('minify', function () {
         .pipe(concat('js/paint.js'))
         .pipe(gulp.dest('build'))
 });
-gulp.task('default', ['minify']);
+
+gulp.task('oldjshint', function () {
+    gulp.src(sourceFiles)
+    .pipe(jshint(jsHintOptions))
+    .pipe(jshint.reporter('default'))
+});
+
+gulp.task('jshint', () =>
+    gulp.src(sourceFiles)
+        .pipe(jshint(jsHintOptions))
+        .pipe(jshint.reporter('jshint-stylish'))
+);
+
+gulp.task('jsHintAndMakebuild', ['jshint', 'makeBuild'])
+gulp.task('default', ['jsHintAndMakebuild']);
 ```
 
 #### Also checkout
