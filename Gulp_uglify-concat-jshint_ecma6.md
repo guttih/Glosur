@@ -11,22 +11,25 @@ npm install --save-dev gulp gulp-babel babel-preset-es2015 gulp-concat gulp-ugli
 
 ```
 
-#####Files in project folder before beginning
+#####Project folder structure
+I will assume that all your code is in a subfolder called "src" which is located 
 ```
 .
++--gulpfile.js
 +--src/
     +--barn.js
     +--main.js
     +--pabbi.js
-+--js/
-    +--app.js
-    +--objects.js
-+--index.html
+
 ```
 
 #####Gulp file
 This gulpfile will run two tasks by default "jshint" and "makeBuild"
 jshint uses the jshint-stylish reporter, which colorcodes errors making them more readable.
+- To run both tasks type `gulp`
+- To make jshint check your code type type `gulp jshint`
+- To minify and combine all your source files into one file type `gulp makeBuild`
+- To run both tasks type `gulp`
 ```
 var gulp = require('gulp');
     jshint = require('gulp-jshint');
@@ -68,6 +71,7 @@ gulp.task('default', ['jsHintAndMakebuild']);
 
 #### Also checkout
 #### gulp-load-plugins
+Which loads gulp plugins from package dependencies and attaches them to an object of your choice.
 [gulp-load-plugins] (https://www.npmjs.com/package/gulp-load-plugins)
 example:
 ```
