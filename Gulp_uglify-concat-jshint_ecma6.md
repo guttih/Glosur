@@ -70,32 +70,3 @@ gulp.task('jsHintAndMakebuild', ['jshint', 'makeBuild']);
 gulp.task('default', ['jsHintAndMakebuild']);
 ```
 
-#### gulp-load-plugins
-You could also use this plugin to skip the require sentences at the top of the gruntfile.  This module loads gulp plugins from package dependencies and attaches them to an object of your choice.
-[gulp-load-plugins] (https://www.npmjs.com/package/gulp-load-plugins)
-example:
-```
-var gulp = require('gulp'),
-	gulpLoadPlugins = require('gulp-load-plugins'),
-	plugins = gulpLoadPlugins();
-
-gulp.task('buildit', function () {
-	return gulp.src('src/*.js')
-		.pipe(plugins.jshint({
-			esversion: 6,
-			globals: {
-				jQuery: true,
-				"$": true
-			}
-		}))
-		.pipe(plugins.jshint.reporter('default'))
-		.pipe(plugins.babel({
-			presets: ['es2015']
-		}))
-		.pipe(plugins.uglify())
-		.pipe(plugins.concat('app.js'))
-		.pipe(gulp.dest('build'));
-});
-
-gulp.task('default', ['buildit']);
-```
