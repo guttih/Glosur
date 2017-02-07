@@ -1,0 +1,17 @@
+// Place your settings in this file to overwrite the default settings
+{
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	/*"files.associations": {
+		"*.ino": "cpp"
+		"*.txt": "sql"
+	},*/
+	"files.encoding": "iso88591",
+	/*"files.encoding": "utf8",*/
+	"editor.renderWhitespace": "all",
+	"editor.wrappingColumn": 0,
+	"editor.mouseWheelZoom": true,
+	"editor.fontSize": 16,
+	"window.zoomLevel": 2/*,
+	"jshint."*/
+}
