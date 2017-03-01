@@ -7,7 +7,7 @@ cd into you project
 ```
 npm init
 npm install -g gulp
-npm install gulp-tslint --save-dev
+npm install gulp gulp-tslint --save-dev
 
 ```
 
