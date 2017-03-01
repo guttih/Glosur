@@ -45,9 +45,10 @@ gulp.task("tslint", () =>
 gulp.task('default', ['tslint']);
 ```
 
-### tslint.json
+#### tslint.json
 In the same directory as the gulpfile.js you will need to have your tslint.json 
 file which will contain the rules you want to check your code by.  Below is an example of a content in that file.
+##### tslint.json
 ```
 {
   "rulesDirectory": [
