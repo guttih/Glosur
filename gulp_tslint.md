@@ -24,7 +24,7 @@ I will assume that all your code is in a subfolder called "src" which is located
 ```
 
 ####Gulp file
-In the gulpfile listed here below will have one task "tslint"
+The gulpfile shown below has one task called "tslint".
 - To make tslint check your code type type `gulp tslint` or just `gulp`
 
 #####gulpfile.js
