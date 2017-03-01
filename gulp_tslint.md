@@ -34,17 +34,12 @@ var gulp = require('gulp');
 
 var sourceFiles = ['src/**/*.ts', '!node_modules/**/*'];
 
-var jsHintOptions = {
-		esversion: 6
-	};
-
-
 gulp.task("tslint", () =>
-	gulp.src(sourceFiles)
-		.pipe(tslint({
-			formatter: "verbose"
-		}))
-		.pipe(tslint.report())
+    gulp.src(sourceFiles)
+        .pipe(tslint({
+            formatter: "verbose"
+        }))
+        .pipe(tslint.report())
 );
 
 gulp.task('default', ['tslint']);
