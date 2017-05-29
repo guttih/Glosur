@@ -1,3 +1,17 @@
+/*
+To debug in chrome do the following after you have changed the location paths of chrome and index.html
+
+1. Copy the next line to the clipboard
+    "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "file:///H:/My%20Documents/Personal/test/index.html" "--remote-debugging-port=9222"
+1. Click the Magnifying glass
+2. Type Run
+3. Click on Run
+4. Paste from the clipboard
+5. Go back to Visual Code
+6. Ctrl+Shift+D
+4. Select Attach to chrome
+8. Press Play
+*/
 
 function makeHtmlSelectOptionString(value, displayString, selected){
     var str, selectStr='';
@@ -11,7 +25,7 @@ function makeHtmlSelectOptionString(value, displayString, selected){
 }
 
 function makeHtmlSelectString(pin, mode){
-	var str ='<select id="m' + pin + '" class="form-control">';
+	var str ='<select id="m' + pin + '" class="select-mode form-control">';
     str += makeHtmlSelectOptionString(0, "INPUT_ANALOG", mode === 0);
     str += makeHtmlSelectOptionString(1, "INPUT_DIGITAL", mode === 1);
     str += makeHtmlSelectOptionString(2, "OUTPUT_ANALOG", mode === 2);
@@ -19,6 +33,8 @@ function makeHtmlSelectString(pin, mode){
     str +='</select>';
 	return str;
 }
+
+
 
 function setPinValues(pins){
 	
@@ -63,6 +79,46 @@ function getPinsFromTable(){
     return pins;
 }
 
+function  isCheckboxChecked() {
+    return $('#change-hardware').is(':checked');
+}
+
+function EnableInputSelects(enable){
+	   
+        if (enable === true){
+            $(".select-mode").removeAttr('disabled');
+         } else{
+             $(".select-mode").attr('disabled', 'disabled');
+             
+         }
+}
+
+ $('#change-hardware').click(function() {
+         EnableInputSelects(isCheckboxChecked())
+
+    });
+	$('#btnSetPinValue').click(function() {
+		$('.overlay').hide();
+		inputDialog.hide();
+
+		var pin = $('#inputDialogPin').text();
+		var val = $('#inputDialogValue').val();
+		 $('#val'+pin).addClass("unknownValue");
+		var deviceId = $('#device-id').text();
+		
+		//pin.active(false); gray the cell
+		var sendObj = {};
+		sendObj[pin]=val;
+		var url = SERVER+'/devices/pins/'+deviceId;
+		var posting = $.post( url, sendObj);
+
+		posting.done(function(data){
+			console.log(data);
+			updatePinValues(data.pins);
+		});
+
+	});
+
 $(document).ready(function(){
     console.log('document is ready!');
 
@@ -83,8 +139,17 @@ $(document).ready(function(){
         {name: 'D10', pin:10, val: 20, m : 2 },
         {name: 'D11', pin:11, val: 21, m : 2 },
        ] 
+    var ret;
+    ret = 
     setPinValues(pins);
-    var data = getPinsFromTable();
-    console.log(data);
+   EnableInputSelects(isCheckboxChecked());
 });
+
+   
+
+$('#btn-test').click(function() {
+	var data = getPinsFromTable();
+    console.log(data);
+    console.log(isCheckboxChecked());
+	});
 
