@@ -1,0 +1,29 @@
+.axis path {
+    fill: none;
+    stroke: #777;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: Lato;
+    font-size: 13px;
+}
+
+#visualisation > g.x.axis > g > text {
+    -ms-transform: translate(-5px, 62px) rotate(-90deg); /* IE 9 */
+    -webkit-transform: translate(-5px, 62px) rotate(-90deg); /* Safari */
+    transform: translate(-5px, 62px) rotate(-90deg);
+}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
