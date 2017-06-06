@@ -11,17 +11,16 @@
 #visualisation > g.x.axis > g > text {
     -ms-transform: translate(-5px, 62px) rotate(-90deg); /* IE 9 */
     -webkit-transform: translate(-5px, 62px) rotate(-90deg); /* Safari */
-    transform: translate(-5px, 62px) rotate(-90deg);
+    transform: translate(-13px, 67px) rotate(-90deg);
 }
 
-path { 
-    stroke: steelblue;
+path {
+    /*stroke: steelblue;*/
     stroke-width: 2;
     fill: none;
 }
 
-.axis path,
-.axis line {
+.axis path, .axis line {
     fill: none;
     stroke: grey;
     stroke-width: 1;
