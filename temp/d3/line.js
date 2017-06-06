@@ -39,7 +39,8 @@ function InitChart(dataIn, yScaleMax) {
     yScaleMax === undefined ? (YscaleMax = 215) : (YscaleMax = yScaleMax);
 
     var minMax = getMinMax(dataIn);
-    var iso = d3.time.format.utc("%Y-%m-%dT%H:%M:%S");
+    console.log(minMax);
+    var iso = d3.time.format.utc("%Y-%m-%d %H:%M:%S");
     var vis = d3.select("#visualisation"),
         WIDTH = 1000,
         HEIGHT = 500,
@@ -133,12 +134,23 @@ function InitChart(dataIn, yScaleMax) {
             .attr("fill", getColor(i))
             .attr("r", 3)
             .attr("cx", function(d, i) {
-                console.log(d);
                 return xScale(d.datetime);
             })
             .attr("cy", function(d, i) {
                 return yScale(d.val);
-            });
+            })
+            .append("title")
+            .text(function(d, i) {
+                return (
+                    "date: " +
+                    iso(new Date(d.datetime)) +
+                    "  pin: " +
+                    d.pin +
+                    "  value: " +
+                    d.val
+                );
+            })
+            .attr("class", "dotHint");
     });
 }
 
