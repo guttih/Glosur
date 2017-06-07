@@ -90,67 +90,56 @@ function InitChart(dataIn, yScaleMax) {
         // .interpolate("cardinal");
         .interpolate("monotone");
 
-    var parseDate = d3.time.format("%Y-%m-%dT%H:%M:%S").parse;
-    bisectDate = d3.bisector(function(d) {
-        return d.date;
-    }).left; // **
+    var tip = d3
+        .tip()
+        .attr("class", "d3-tip")
+        .offset([-7, 0])
+        .html(function(d) {
+            return (
+                '<span class="tip-key">Name</span><span class="tip-value">' +
+                d.name +
+                "</span><br>" +
+                '<span class="tip-key">Date</span><span class="tip-value">' +
+                iso(new Date(d.datetime)) +
+                "</span><br>" +
+                '<span class="tip-key">Pin</span><span class="tip-value">' +
+                d.pin +
+                "</span><br>" +
+                '<span class="tip-key">Value</span><span class="tip-value">' +
+                d.val +
+                "</span><br>"
+            );
+        });
 
-    /*
-    vis
-        .append("svg:path")
-        .attr("d", lineGen(logData.D0))
-        .attr("stroke", "green")
-        .attr("stroke-width", 2)
-        .attr("fill", "none");
-    vis
-        .append("svg:path")
-        .attr("d", lineGen(logData.D1))
-        .attr("stroke", "blue")
-        .attr("stroke-width", 2)
-        .attr("fill", "none");
-    */
+    vis.call(tip);
+
+    //adding the lines
     var keys = Object.keys(dataIn);
     var color = d3.scale.category20();
-    keys.forEach(function logArrayElements(element, i) {
-        /* .attr("fill",function(d,i){return color(i);});*/
-
+    keys.forEach(function logArrayElements(key, i, item) {
         vis
             .append("svg:path")
-            .attr("d", lineGen(dataIn[element]))
-            //.attr("stroke", "green")
+            .attr("d", lineGen(dataIn[key]))
             .attr("stroke", getColor(i))
             .attr("stroke-width", 2)
             .attr("fill", "none");
 
-        // dæmi hér til að bæta við punkt og onMouseOver : http://www.d3noob.org/2014/07/my-favourite-tooltip-method-for-line.html
-        // hér er líka fiddle: http://jsfiddle.net/hapypork/JYS8n/66/
-
         vis
             .selectAll("dot")
-            .data(dataIn[element])
+            .data(dataIn[key])
             .enter()
             .append("circle")
             .attr("stroke", "white")
             .attr("fill", getColor(i))
-            .attr("r", 3)
+            .attr("r", 4)
             .attr("cx", function(d, i) {
                 return xScale(d.datetime);
             })
             .attr("cy", function(d, i) {
                 return yScale(d.val);
             })
-            .append("title")
-            .text(function(d, i) {
-                return (
-                    "date: " +
-                    iso(new Date(d.datetime)) +
-                    "  pin: " +
-                    d.pin +
-                    "  value: " +
-                    d.val
-                );
-            })
-            .attr("class", "dotHint");
+            .on("mouseover", tip.show)
+            .on("mouseout", tip.hide);
     });
 }
 
@@ -167,7 +156,8 @@ function logsToChartPins(logs) {
             ret[log.pins[x].name].push({
                 datetime: log.datetime,
                 pin: log.pins[x].pin,
-                val: log.pins[x].val
+                val: log.pins[x].val,
+                name: log.pins[x].name
             });
         }
     }
@@ -227,7 +217,7 @@ var logs = [
     {
         datetime: new Date("2017-06-06T12:08:42.803Z"),
         pins: [
-            { pin: 0, val: 0, name: "D0" },
+            { pin: 0, val: 15, name: "D0" },
             { pin: 1, val: 110, name: "D1" },
             { pin: 2, val: 210, name: "D2" },
             { pin: 3, val: 210, name: "D3" },
@@ -244,7 +234,7 @@ var logs = [
     {
         datetime: new Date("2017-06-06T14:08:42.803Z"),
         pins: [
-            { pin: 0, val: 110, name: "D0" },
+            { pin: 0, val: 55, name: "D0" },
             { pin: 1, val: 10, name: "D1" },
             { pin: 2, val: 12, name: "D2" },
             { pin: 3, val: 110, name: "D3" },
