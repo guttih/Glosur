@@ -18,10 +18,17 @@ function logStr(str) {
     var timeStr = msToTime(Date.now());
     console.log(timeStr + ' | ' + str);
 }
-function log(obj) {
+function log(arguments) {
     var d = Date();
     var timeStr = msToTime(Date.now());
     console.log(timeStr);
-    console.log(obj);
+    try {
+        console.log.apply(console, arguments);
+    } catch (e) {
+        try {
+            opera.postError.apply(opera, arguments);
+        } catch (e) {
+            console.log(arguments);
+        }
+    }
 }
-
