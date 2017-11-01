@@ -1,5 +1,3 @@
-//Nice to have functions
-
 function msToTime(duration) {
     var milliseconds = parseInt((duration % 1000) / 100)
         , seconds = parseInt((duration / 1000) % 60)
@@ -12,23 +10,25 @@ function msToTime(duration) {
 
     return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 }
+function msTime() {
+    return msToTime(Date.now());
+}
 
 function logStr(str) {
-    var d = Date();
-    var timeStr = msToTime(Date.now());
-    console.log(timeStr + ' | ' + str);
+    console.log(msTime() + ' | ' + str);
 }
-function log(arguments) {
-    var d = Date();
-    var timeStr = msToTime(Date.now());
-    console.log(timeStr);
+function log(arg) {
+    if (arguments.length === 1 && typeof arg == 'string') {
+        return logStr(arg);
+    }
+    console.log(msTime() + ' | Object below');
     try {
         console.log.apply(console, arguments);
     } catch (e) {
         try {
             opera.postError.apply(opera, arguments);
         } catch (e) {
-            console.log(arguments);
+            logStr(arg);
         }
     }
 }
