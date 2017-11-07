@@ -1,3 +1,23 @@
+function addZero(x, n) {
+        while (x.toString().length < n) {
+            x = "0" + x;
+        }
+        return x;
+    }
+function dateToTime(d) {
+
+    var hours        = addZero(d.getHours(), 2),
+        minutes      = addZero(d.getMinutes(), 2),
+        seconds      = addZero(d.getSeconds(), 2),
+        milliseconds = addZero(d.getMilliseconds(), 3);
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+}
+
+function dateTimeMsString() {
+    returndateToTime(new Date());
+}
+
 function msToTime(duration) {
     var milliseconds = parseInt((duration % 1000) / 100)
         , seconds = parseInt((duration / 1000) % 60)
