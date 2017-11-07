@@ -15,7 +15,7 @@ function dateToTime(d) {
 }
 
 function dateTimeMsString() {
-    returndateToTime(new Date());
+    return dateToTime(new Date());
 }
 
 function msToTime(duration) {
