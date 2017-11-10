@@ -69,6 +69,32 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
 
     return false;
 }
+// fengið frá: https://is.wikipedia.org/wiki/Kennitala
+function islSSNValidate(ssn) {
+        if (typeof ssn !== 'undefined' && ssn != null && ssn.length > 0) {
+            ssn = ssn.trim().replace('-', '').replace(' ', '');
+            if (ssn.length != 10)
+                return false;
+			var sSum =
+				(3 * parseInt(ssn.substr(0, 1))) +
+				(2 * parseInt(ssn.substr(1, 1))) +
+				(7 * parseInt(ssn.substr(2, 1))) +
+				(6 * parseInt(ssn.substr(3, 1))) +
+				(5 * parseInt(ssn.substr(4, 1))) +
+				(4 * parseInt(ssn.substr(5, 1))) +
+				(3 * parseInt(ssn.substr(6, 1))) +
+				(2 * parseInt(ssn.substr(7, 1)));
+			var modRes = sSum % 11;
+			if (modRes > 0)
+				modRes = 11 - modRes;
+			if (modRes != parseInt(ssn.substr(8, 1)))
+				return false
+			var century = parseInt(ssn.substr(9, 1)); 
+			if (isNaN(century) || (century != 0 && century != 9 && century != 8)) 
+				return false;
+        }
+        return true;
+    }
 
 function addZero(x, n) {
         while (x.toString().length < n) {
