@@ -1,18 +1,31 @@
 /*
     Eftir: Guðjón Hólm Sigurðsson
     Athuga hvort Einstaklings- eða fyrirtækjakennitala sé lögleg.
-    skilar true ef strKennitala er OK
-    skilar false ef strKennitala re ekki OK
-    Kennitala má hafa bandstrik
+    returns:
+        true  : ef kennitala er OK
+        false : ef kennitala er ólögleg.
+    
+    Parameters:
+        strKennitala      : Kennitalan sem skoða skal má vera á forminu "110871-4579" og "1108714579".
+
+        baraEinstaklingur : er valkvæð(optional) segir til um hvort bara eigi að samþykkja einstaklings kennitölur.
+                            ef true: þá munu einungis einstaklings-kennitölur verða samþykktar.
+                            ef false: þá munu bara fyrirtækis-kennitölur verða samþykktar.
+                            ef ekki tiltekin(undefined) þá eru bæði löglegar fyrirtækis- og einstaklings kennitölur samþykktar.
+    example of use:
+        erKennitalaOk('1108714579', true); // Mun skila true.   Athugað hvort kennitala sé lögleg einstaklings-kennitala.
+        erKennitalaOk('1108714579', false) // Mun skila  false. Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
+        erKennitalaOk('5708982219', true); // Mun skila false.  Athugað hvort kennitala sé lögleg einstaklings-kennitala.
+        erKennitalaOk('5708982219', false) // Mun skila true.   Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
 */
-function erKennitalaOk(strKennitala) {
+function erKennitalaOk(strKennitala, baraEinstaklingur) {
 
     if (!strKennitala) { return false; }
 
     var i,
         iLen = strKennitala.length;
 
-    if (iLen == 11 && strKennitala.indexOf('-') == 6) {   //breyta úr "110871-4579" í "1108714579"
+    if (iLen == 11 && strKennitala.indexOf('-') == 6) {   //fjarlægja '-'
         strKennitala = strKennitala.substring(0, 6) + strKennitala.substring(7);
         iLen = strKennitala.length;
     }
@@ -22,7 +35,7 @@ function erKennitalaOk(strKennitala) {
 
     if (strKennitala == '1111111111') {
         return false;
-    }	//kennitalan er lögleg en þá er ansi mikil tilviljun að einhver sé með hana svo ég ætla ekki að leyfa hana, líklegast er að einhver sé að svindla
+    }	//kennitalan er lögleg en það er ansi mikil tilviljun að einhver sé með hana svo ég ætla ekki að leyfa hana, líklegast er að einhver sé að svindla
 
     var i = Number(strKennitala.substring(0, 2));
     if (i > 71 || i < 1) { return false; }
@@ -41,9 +54,16 @@ function erKennitalaOk(strKennitala) {
     if (summa == 0) vartala = 0;
     if (summa >= 2 && summa <= 10) { vartala = 11 - summa; }
     if (vartala == (Number(strKennitala.substring(8, 9)))) {
-        return true;
-    }
 
+        //vartala checks out
+        if (baraEinstaklingur === undefined) { return true; }
+        var first = strKennitala.charAt(0);
+        if (baraEinstaklingur === true) {
+            if (first === '0' || first === '1') { return true;}
+        } else {
+            if (first === '4' || first === '5') { return true; }
+        }
+    }
     return false;
 }
 
