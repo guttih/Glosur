@@ -13,8 +13,10 @@
                             ef false: þá munu bara fyrirtækis-kennitölur verða samþykktar.
                             ef ekki tiltekin(undefined) þá eru bæði löglegar fyrirtækis- og einstaklings kennitölur samþykktar.
     example of use:
+        erKennitalaOk('1108714579');       // Mun skila true.   Athugað hvort kennitala sé lögleg.
         erKennitalaOk('1108714579', true); // Mun skila true.   Athugað hvort kennitala sé lögleg einstaklings-kennitala.
-        erKennitalaOk('1108714579', false) // Mun skila  false. Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
+        erKennitalaOk('1108714579', false);// Mun skila  false. Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
+	erKennitalaOk('5708982219');       // Mun skila true.   Athugað hvort kennitala sé lögleg.
         erKennitalaOk('5708982219', true); // Mun skila false.  Athugað hvort kennitala sé lögleg einstaklings-kennitala.
         erKennitalaOk('5708982219', false) // Mun skila true.   Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
 */
