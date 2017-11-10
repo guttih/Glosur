@@ -55,7 +55,7 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
     if (summa >= 2 && summa <= 10) { vartala = 11 - summa; }
     if (vartala == (Number(strKennitala.substring(8, 9)))) {
 
-        //vartala checks out
+        //vartala er í lagi
         if (baraEinstaklingur === undefined) { return true; }
         var first = strKennitala.charAt(0);
         if (baraEinstaklingur === true) {
@@ -64,6 +64,7 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
             if (first === '4' || first === '5') { return true; }
         }
     }
+
     return false;
 }
 
