@@ -1,3 +1,52 @@
+/*
+    Eftir: Guðjón Hólm Sigurðsson
+    Athuga hvort Einstaklings- eða fyrirtækjakennitala sé lögleg.
+    skilar true ef strKennitala er OK
+    skilar false ef strKennitala re ekki OK
+    Kennitala má hafa bandstrik
+*/
+function erKennitalaOk(strKennitala) {
+
+    if (!strKennitala) { return false; }
+
+    var i,
+        iLen = strKennitala.length;
+
+    if (iLen == 11 && strKennitala.indexOf('-') == 6) {   //breyta úr "110871-4579" í "1108714579"
+        strKennitala = strKennitala.substring(0, 6) + strKennitala.substring(7);
+        iLen = strKennitala.length;
+    }
+    if (iLen != 10) { return false; }
+
+    if (!Number(strKennitala)) { return false; }
+
+    if (strKennitala == '1111111111') {
+        return false;
+    }	//kennitalan er lögleg en þá er ansi mikil tilviljun að einhver sé með hana svo ég ætla ekki að leyfa hana, líklegast er að einhver sé að svindla
+
+    var i = Number(strKennitala.substring(0, 2));
+    if (i > 71 || i < 1) { return false; }
+    i = Number(strKennitala.substring(2, 4));
+    if (i < 1 || i > 12) { return false; }//mánuður er ekki frá 1 til 12
+
+    var summa = 0,
+	    vartala = -1;
+    studull = 3;
+    for (i = 0; i < 8; i++) {
+        if (i == 2) { studull = 7; }
+        summa += (Number(strKennitala.substring(i, i + 1))) * studull;
+        studull--;
+    }
+    summa = summa % 11;
+    if (summa == 0) vartala = 0;
+    if (summa >= 2 && summa <= 10) { vartala = 11 - summa; }
+    if (vartala == (Number(strKennitala.substring(8, 9)))) {
+        return true;
+    }
+
+    return false;
+}
+
 function addZero(x, n) {
         while (x.toString().length < n) {
             x = "0" + x;
