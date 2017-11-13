@@ -1,5 +1,5 @@
 /*
-    Eftir: Guðjón Hólm Sigurðsson
+    Eftir: Guðjón Hólm Sigurðsson - fengið af www.undri.is
     Athuga hvort Einstaklings- eða fyrirtækjakennitala sé lögleg.
     returns:
         true  : ef kennitala er OK
@@ -16,7 +16,7 @@
         erKennitalaOk('1108714579');       // Mun skila true.   Athugað hvort kennitala sé lögleg.
         erKennitalaOk('1108714579', true); // Mun skila true.   Athugað hvort kennitala sé lögleg einstaklings-kennitala.
         erKennitalaOk('1108714579', false);// Mun skila  false. Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
-	erKennitalaOk('5708982219');       // Mun skila true.   Athugað hvort kennitala sé lögleg.
+        erKennitalaOk('5708982219');       // Mun skila true.   Athugað hvort kennitala sé lögleg.
         erKennitalaOk('5708982219', true); // Mun skila false.  Athugað hvort kennitala sé lögleg einstaklings-kennitala.
         erKennitalaOk('5708982219', false) // Mun skila true.   Athugað hvort kennitala sé lögleg fyrirtækja-kennitala.
 */
@@ -34,10 +34,6 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
     if (iLen != 10) { return false; }
 
     if (!Number(strKennitala)) { return false; }
-
-    if (strKennitala == '1111111111') {
-        return false;
-    }	//kennitalan er lögleg en það er ansi mikil tilviljun að einhver sé með hana svo ég ætla ekki að leyfa hana, líklegast er að einhver sé að svindla
 
     var i = Number(strKennitala.substring(0, 2));
     if (i > 71 || i < 1) { return false; }
@@ -58,43 +54,22 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
     if (vartala == (Number(strKennitala.substring(8, 9)))) {
 
         //vartala er í lagi
+        var stafur = strKennitala.charAt(9); //öldin
+        if (stafur !== '0' && stafur !== '9' && stafur !== '8') {
+            return false;
+        }
+
         if (baraEinstaklingur === undefined) { return true; }
-        var first = strKennitala.charAt(0);
+        var tala = Number(strKennitala.charAt(0));
         if (baraEinstaklingur === true) {
-            if (first === '0' || first === '1') { return true;}
+            if (tala > '-1' || stafur < '4') { return true; }
         } else {
-            if (first === '4' || first === '5') { return true; }
+            if (tala > 3 || tala < 8) { return true; }
         }
     }
 
     return false;
 }
-// fengið frá: https://is.wikipedia.org/wiki/Kennitala
-function islSSNValidate(ssn) {
-        if (typeof ssn !== 'undefined' && ssn != null && ssn.length > 0) {
-            ssn = ssn.trim().replace('-', '').replace(' ', '');
-            if (ssn.length != 10)
-                return false;
-			var sSum =
-				(3 * parseInt(ssn.substr(0, 1))) +
-				(2 * parseInt(ssn.substr(1, 1))) +
-				(7 * parseInt(ssn.substr(2, 1))) +
-				(6 * parseInt(ssn.substr(3, 1))) +
-				(5 * parseInt(ssn.substr(4, 1))) +
-				(4 * parseInt(ssn.substr(5, 1))) +
-				(3 * parseInt(ssn.substr(6, 1))) +
-				(2 * parseInt(ssn.substr(7, 1)));
-			var modRes = sSum % 11;
-			if (modRes > 0)
-				modRes = 11 - modRes;
-			if (modRes != parseInt(ssn.substr(8, 1)))
-				return false
-			var century = parseInt(ssn.substr(9, 1)); 
-			if (isNaN(century) || (century != 0 && century != 9 && century != 8)) 
-				return false;
-        }
-        return true;
-    }
 
 function addZero(x, n) {
         while (x.toString().length < n) {
