@@ -38,7 +38,7 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
     var i = Number(strKennitala.substring(0, 2));
     if (i > 71 || i < 1) { return false; }
     i = Number(strKennitala.substring(2, 4));
-    if (i < 1 || i > 12) { return false; }//mánuður er ekki frá 1 til 12
+    if (i < 1 || i > 12) { return false; } // Mánuður er ekki frá 1 til 12, kannski óþarfa tékk
 
     var summa = 0,
 	    vartala = -1;
@@ -53,18 +53,18 @@ function erKennitalaOk(strKennitala, baraEinstaklingur) {
     if (summa >= 2 && summa <= 10) { vartala = 11 - summa; }
     if (vartala == (Number(strKennitala.substring(8, 9)))) {
 
-        //vartala er í lagi
-        var stafur = strKennitala.charAt(9); //öldin
+        // Vartala er í lagi
+        var stafur = strKennitala.charAt(9); // Öldin
         if (stafur !== '0' && stafur !== '9' && stafur !== '8') {
             return false;
         }
 
-        if (baraEinstaklingur === undefined) { return true; }
+        if (baraEinstaklingur === undefined) { return true; } // Lögleg kennitala
         var tala = Number(strKennitala.charAt(0));
         if (baraEinstaklingur === true) {
-            if (tala > '-1' || stafur < '4') { return true; }
+            if ( tala > -1 && tala < 4 ) { return true; } // Einstaklins-kennitala
         } else {
-            if (tala > 3 || tala < 8) { return true; }
+            if ( tala > 3 && tala < 8 ) { return true; } // Fyrirtækis-kennitala
         }
     }
 
