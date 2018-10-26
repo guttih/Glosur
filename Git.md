@@ -38,7 +38,7 @@ git commit -m "made a beutiful and peasful changes to the file changefilename"
 git push -u origin feturename
 ```
 Að þessu loknu skal fara á github-repoinn og þar er hægt að smella á takkann "Compare & pull request"
-Skrifa eitthvað subject og vitræna desciption. 
+Skrifa eitthvað subject og vitræna description. 
 
 
 
