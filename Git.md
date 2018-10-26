@@ -40,7 +40,27 @@ git push -u origin feturename
 Að þessu loknu skal fara á github-repoinn og þar er hægt að smella á takkann "Compare & pull request"
 Skrifa eitthvað subject og vitræna description. 
 
-
+## You can pull changes from master to your branch
+### Using fetch & pull
+```shell 
+git checkout my_branch   # move on your branch (make sure it exists)
+git fetch origin         # fetch all changes
+git pull origin master   # pull changes from the origin remote, master branch and merge them into my_branch
+git push my_branch       # push my_branch
+```
+### Using merge
+```shell 
+git checkout mybranch
+git merge master (or rebase)
+# After this you are directly pushing to your branch, before this just add and commit like this.
+git add .
+git commit -m "msg after merging"
+git push origin mybranch
+```
+#ssh
+To change beetwen two ssh files saved in config ssh -T bitbuc
+f.example if host was bitbuc then this would change to that profile
+we are talking about the file ~/.ssh/config
 
 
 ## Fleygja öllu og sækja nýtt
@@ -100,26 +120,6 @@ https://github.com/dthgs/project_Skjatexti
 -  git clone git@github.com:danielbsig/TestApp.git - Klónar projectið / Tekur afrit af kóðanum / Býr til projectið inná GitHub
 -  git merge master - Tekur inn breytingar á master, í branch-ið
 
-## You can pull changes from master to your branch
-### Using fetch & pull
-```shell 
-git checkout my_branch   # move on your branch (make sure it exists)
-git fetch origin         # fetch all changes
-git pull origin master   # pull changes from the origin remote, master branch and merge them into my_branch
-git push my_branch       # push my_branch
-```
-### Using merge
-```shell 
-git checkout mybranch
-git merge master (or rebase)
-# After this you are directly pushing to your branch, before this just add and commit like this.
-git add .
-git commit -m "msg after merging"
-git push origin mybranch
-```
-#ssh
-To change beetwen two ssh files saved in config ssh -T bitbuc
-f.example if host was bitbuc then this would change to that profile
-we are talking about the file ~/.ssh/config
+
 
 
