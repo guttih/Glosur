@@ -1,9 +1,14 @@
  ### Skipanir
--     Commit - Tekur kóðann úr einum punkti í annann, inniheldur x-margar skrár sem hafa annaðhvort breyst, bæst við eða dottið út
--     Push - Sendir breytingar inná miðlæga repository-ið (Bitbucket/GitHub)
--     Pull - Sækir breytingar frá miðlæga repository-inu (Bitbucket/GitHub)
--     Branch - Ný hliðstæð útgáfa af kóðanum.. svo er hægt að halda áfram þaðan / Mismunandi útgáfur, svo ekki sé verið að skemma fyrir hvor öðrum / Þegar verið er að fara að útfæra ákveðinn fídus, einn og sér, án þess að hafa áhrif á aðra
--     Checkout - Svissar á milli brancha
+- Commit
+    - Tekur kóðann úr einum punkti í annann, inniheldur x-margar skrár sem hafa annaðhvort breyst, bæst við eða dottið út
+- Push
+    - Sendir breytingar inná miðlæga repository-ið (Bitbucket/GitHub)
+- Pull 
+    - Sækir breytingar frá miðlæga repository-inu (Bitbucket/GitHub)
+- Branch 
+    - Ný hliðstæð útgáfa af kóðanum.. svo er hægt að halda áfram þaðan / Mismunandi útgáfur, svo ekki sé verið að skemma fyrir hvor öðrum / Þegar verið er að fara að útfæra ákveðinn fídus, einn og sér, án þess að hafa áhrif á aðra
+- Checkout 
+    - Svissar á milli brancha
 
 # Git glósur
 - `git remote -v` Skoða slóða að origin `https://github.com/Hubar/ticktacktoe.git`
