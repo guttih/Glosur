@@ -46,6 +46,7 @@ Skrifa eitthvað subject og vitræna description.
 git checkout my_branch         # move on your branch (make sure it exists)
 git pull origin                # pull all changes
 git pull origin master -no-ff  # pull changes from the origin remote, master branch and merge them into my_branch (no fast forward)
+# If any changes pulled, check if code builds and unit tests succeed
 git push my_branch             # push my_branch
 ```
 ### Using merge
