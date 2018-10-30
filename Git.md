@@ -43,10 +43,10 @@ Skrifa eitthvað subject og vitræna description.
 ## You can pull changes from master to your branch
 ### Using fetch & pull
 ```shell 
-git checkout my_branch   # move on your branch (make sure it exists)
-git fetch origin         # fetch all changes
-git pull origin master   # pull changes from the origin remote, master branch and merge them into my_branch
-git push my_branch       # push my_branch
+git checkout my_branch         # move on your branch (make sure it exists)
+git pull origin                # pull all changes
+git pull origin master -no-ff  # pull changes from the origin remote, master branch and merge them into my_branch (no fast forward)
+git push my_branch             # push my_branch
 ```
 ### Using merge
 ```shell 
