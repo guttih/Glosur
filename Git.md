@@ -23,7 +23,18 @@
 - `git push -u origin minus`pusha minus branchi á origin -u upstream
 - `git fetch origin GetPositionFromPlayer` Sækja bara branchið GetPositionFromPlayer.  Gott til að tékka á breytingum áður en pullrequesta er acceptuð
 
-
+### Gera daglega
+Þegar þú vinnur að breytingu eða fixi þá þarft þú að sjá til þess að þitt branch sé synkað við master branchið.
+Þú mátt auðvitað gera það oftar en einu sinni á dag.
+Það er hægt að gera með eftirfarandi skipunum.
+```shell 
+git checkout master
+git pull
+git checkout VIS-SOGUNR
+git merge origin/master
+#Keyrir svo öll Unit test til að athuga hvort allt sé OK
+git push origin VIS-SOGUNR
+```
 
 ## Gera pull request
 Það þarf að pulla frá master, búa til branch gera breytingar og pusha svo branch-inu.  
