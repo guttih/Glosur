@@ -23,6 +23,8 @@
 - `git push -u origin minus`pusha minus branchi á origin -u upstream
 - `git fetch origin GetPositionFromPlayer` Sækja bara branchið GetPositionFromPlayer.  Gott til að tékka á breytingum áður en pullrequesta er acceptuð
 
+[Hér á ég líka glósur git process á öðru projecti](https://github.com/guttih/react/blob/master/gitProcess.md)
+
 ### Gera daglega
 Þegar þú vinnur að breytingu eða fixi þá þarft þú að sjá til þess að þitt branch sé synkað við master branchið.
 Þú mátt auðvitað gera það oftar en einu sinni á dag.
