@@ -53,7 +53,7 @@ git push -u origin feturename
 Að þessu loknu skal fara á github-repoinn og þar er hægt að smella á takkann "Compare & pull request"
 Skrifa eitthvað subject og vitræna description. 
 
-## Breyta gömlum commit texta (Amending commmit message)
+## Breyta gömlum commit texta (Amending commit message)
 Hægt er að breyta commit message á gömlu commiti. Textaleitaðu á [Á þessari síðu](https://help.github.com/articles/changing-a-commit-message/#commit-has-not-been-pushed-online) að "Amending the message of older or multiple commit messages"
 
 
