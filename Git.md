@@ -54,7 +54,7 @@ Að þessu loknu skal fara á github-repoinn og þar er hægt að smella á takk
 Skrifa eitthvað subject og vitræna description. 
 
 ## Breyta gömlum commit texta (Amending commit message)
-Hægt er að breyta commit message á gömlu commiti. Textaleitaðu á [Á þessari síðu](https://help.github.com/articles/changing-a-commit-message/#commit-has-not-been-pushed-online) að "Amending the message of older or multiple commit messages"
+Hægt er að breyta commit message á gömlu commiti. Textaleitaðu á [þessari síðu](https://help.github.com/articles/changing-a-commit-message/#commit-has-not-been-pushed-online) að "Amending the message of older or multiple commit messages"
 
 
 ## You can pull changes from master to your branch
