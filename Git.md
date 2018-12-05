@@ -17,11 +17,15 @@
 - `git log` skoða commit sögu.
 - `git log -p` skoða breytingarnar
 - `git add filename` addar breyttri skrá á stage-ið
+- `git clean -f` Remove untracked files from the working tree
 - `git reset HEAD filename` tekur breyttri skrá af stage-inu.
 - `git checkout -b branchname`  checka út local sem nýtt branch.  Nú ef þú gertir git status `git status` þá kemur On branch branchname
 - `git push origin master`pusha commitum á origin/master
 - `git push -u origin minus`pusha minus branchi á origin -u upstream
 - `git fetch origin GetPositionFromPlayer` Sækja bara branchið GetPositionFromPlayer.  Gott til að tékka á breytingum áður en pullrequesta er acceptuð
+ 
+-  `git clone git@github.com:danielbsig/TestApp.git - Klónar projectið / Tekur afrit af kóðanum / Býr til projectið inná GitHub
+-  `git merge master - Tekur inn breytingar á master, í branch-ið
 
 [Hér á ég líka glósur git process á öðru projecti](https://github.com/guttih/react/blob/master/gitProcess.md)
 
@@ -113,30 +117,9 @@ git pull (sækja af netinu)
  
 //laga merge ef conflict og þá add-a, commit-a og pull-a aftur.
  
-git push (senda upp)
--     Commita oft
--     Gera mörg branches
--     Gera mörg master
--     Eitt aðalbranch (master)
--     Búa til branch fyrir alla fídusa
--     Gera merge master reglulega á branch-inu
--     Sérhvert branch getur innihaldið x-mörg commit
--     Commit-in eiga að vera lítil, litlar breytingar
--     Þegar búið er að útfæra fídusinn, er merge-að branch-ið inní master
--     Ekki óalgengt að henda svo branch-inu þegar það er búið að þjóna sínum tilgangi
 
  
- 
-http://git-scm.com/downloads
-https://github.com/dthgs/project_Skjatexti
-- 	git status - Hver er staðan á working directory
--  git checkout -b my-new-branch - Býr til nýtt branch
--  git checkout master - Skiptir yfir á master
--  git add . - Þannig að hægt sé að commit-a breytingum / Þannig að hægt sé að gera breytingar / "Næst þegar ég commit-a þá eiga þessar breytingar á þessum skrám að fara inn í commit-ið" / Setur skrárnar í 'Staging area' / Þessi breyting á að fara inn í næsta commit
--  git commit -m "Added some files" - Setur skrárnar í repository-ið, localt í hidden .git möppuna / Commenta commit-ið!
--  git push origin master - Sendir allar breytingar sem hafa verið gerðar á master
--  git clone git@github.com:danielbsig/TestApp.git - Klónar projectið / Tekur afrit af kóðanum / Býr til projectið inná GitHub
--  git merge master - Tekur inn breytingar á master, í branch-ið
+
 
 
 
