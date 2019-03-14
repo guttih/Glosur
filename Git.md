@@ -57,6 +57,18 @@ git push -u origin feturename
 Að þessu loknu skal fara á github-repoinn og þar er hægt að smella á takkann "Compare & pull request"
 Skrifa eitthvað subject og vitræna description. 
 
+## Svissa á milli brancha
+Þegar þú ert með breytingar í einu branchi, en villt ekki tékka þær inn áður en þú svissar þá getur þú stashað breytingunum.
+Þú hoppar yfir í git Bash
+gefur eftirfarandi skipun sem er stitting fyrir `git stash push`
+```
+git stash
+```
+Svissar svo yfir á nýja branchið og vinnur í því.
+Þegar því hefur svo klárað vinnu í branchinu og villt svissa aftur til baka þá ferð þú aftur yfir á upphaflega branchið og gefur svo skipunina 
+```
+git stash pop
+```
 ## Breyta gömlum commit texta (Amending commit message)
 Hægt er að breyta commit message á gömlu commiti. Textaleitaðu á [þessari síðu](https://help.github.com/articles/changing-a-commit-message/#commit-has-not-been-pushed-online) að "Amending the message of older or multiple commit messages"
 
