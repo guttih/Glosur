@@ -60,12 +60,12 @@ Skrifa eitthvað subject og vitræna description.
 ## Svissa á milli brancha
 Þegar þú ert með breytingar í einu branchi, en villt ekki tékka þær inn áður en þú svissar þá getur þú stashað breytingunum.
 Þú hoppar yfir í git Bash
-gefur eftirfarandi skipun sem er stitting fyrir `git stash push`
+gefur eftirfarandi skipun sem er stytting fyrir `git stash push`
 ```
 git stash
 ```
 Svissar svo yfir á nýja branchið og vinnur í því.
-Þegar því hefur svo klárað vinnu í branchinu og villt svissa aftur til baka þá ferð þú aftur yfir á upphaflega branchið og gefur svo skipunina 
+Þegar því hefur svo klárað vinnu í nýja branchinu og villt svissa aftur til baka, þá ferð þú aftur yfir á upphaflega branchið og gefur skipunina 
 ```
 git stash pop
 ```
