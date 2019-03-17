@@ -35,3 +35,15 @@ find . -type d -name node_modules -exec rm -rf {} \;
 ```
 When a directory is deleted then the text `
  No such file or directory` will be displayed.
+ 
+ ### Connections
+ ## nc command
+`nc -vz {host} {port}`  
+`nc -vz 192.168.2.254 80` 
+`nc -vz www.cyberciti.biz 443`
+## nmap command
+`nmap -PNp {port} {host}`  
+`nmap -p {port} {host}`  
+`nmap -p 22 www.cyberciti.biz`  
+`nmap -p 443 192.168.2.254`  
+ 
