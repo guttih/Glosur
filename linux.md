@@ -20,6 +20,7 @@ When a directory is deleted then the text `
 
 
 ## Screen
+`screen` -> `Enter` start the program screeen
 `Ctrl-a` -> `c`: create a new windows  
 `Ctrl-a` -> `w`: display the list of all the windows currently opened  
 `Ctrl-a` -> `A`: rename the current windows. The name will appear when you will list the list of windows opened with Ctrl-a followed by w.  
