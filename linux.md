@@ -21,7 +21,7 @@ Pid = process Id number = that is the Id of a running process
 `Ctrl-a` -> a number from 0 to X: go the windows n° X.  
 `Ctrl-a` -> `"`: choose the windows into which to move on.  
 `Ctrl-a` -> `k`: close the current windows (kill)  
-`Ctrl-a` -> `S`: split the current windows horizontally. To switch between the windows, do Ctrl-a followed by Tab.  
+`Ctrl-a` -> `S`: (capital s) split the current windows horizontally. To switch between the windows, do Ctrl-a followed by Tab.  
 `Ctrl-a` -> `|`: split the current windows vertically  
 `Ctrl-a` -> `d`: detach a screen session without stopping it  
 `Ctrl-a` -> `r`: reattach a detached screen session  
