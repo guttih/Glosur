@@ -6,7 +6,7 @@ Pid = process Id number
  
  ### List processes
 - `ps -a` : List all process and theyr ID
-- `ps -flWW -p Pid` more details about a process
+- `ps -Flww -p Pid` more details about a process
 
 
 ### Delete (Deltree)
