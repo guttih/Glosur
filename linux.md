@@ -1,6 +1,6 @@
 # Linux commands worth remembering#
 
-### lingo
+### Lingo
 Pid = process Id number = that is the Id of a running process  
 `Ctrl-a` -> `c` =  `Ctrl-a` followed by `c`  
  
@@ -8,15 +8,6 @@ Pid = process Id number = that is the Id of a running process
  ### List processes
 - `ps -a` : List all process and theyr ID
 - `ps -Flww -p Pid` more details about a process
-
-
-### Delete (Deltree)
- Delete all node folders and theyr content, recursivly
-```shell
-find . -type d -name node_modules -exec rm -rf {} \;
-```
-When a directory is deleted then the text `
- No such file or directory` will be displayed.
 
 
 ## Screen
@@ -36,3 +27,11 @@ When a directory is deleted then the text `
 `Ctrl-a` -> `r`: reattach a detached screen session  
 `Ctrl-a` -> `[`: start the copy mode  
 `Ctrl-a` -> `]`: paste the copied texte  
+
+### Delete (Deltree)
+ Delete all node folders and theyr content, recursivly
+```shell
+find . -type d -name node_modules -exec rm -rf {} \;
+```
+When a directory is deleted then the text `
+ No such file or directory` will be displayed.
