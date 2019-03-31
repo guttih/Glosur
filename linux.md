@@ -8,6 +8,8 @@ Pid = process Id number = that is the Id of a running process
  ### List processes
 - `ps -a` : List all process and theyr ID
 - `ps -Flww -p Pid` more details about a process
+- `ps -a | grep node |awk '{print $1}'` list only pIDs of processes with node in the name
+- `ps -a|grep node|awk '{print $1}'|xargs ps -Flww -p` details about all processes which have node in the name
 
 
 ## Screen
