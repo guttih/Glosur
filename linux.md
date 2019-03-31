@@ -10,12 +10,9 @@ Pid = process Id number = that is the Id of a running process
 - `ps -Flww -p Pid` more details about a process
 - `ps -a | grep node |awk '{print $1}'` list only pIDs of processes with node in the name
 - `ps -a|grep node|awk '{print $1}'|xargs ps -Flww -p` details about all processes which have node in the name
-- list ports of all all node apps called "app.js"
-```shell
-ps -a|grep node|awk '{print $1}'|xargs ps -Flww -p|grep "node app.js"|awk '{print $4}'>findNodeAppJsPorts.txt
-netstat -tulpn|grep -f findNodeAppJsPorts.txt
-rm findNodeAppJsPorts.txt
-```
+- `netstat -tulpn | grep -f <(pgrep -a node | grep 'node app.js' | awk '{print $1}') ` list ports of all all node apps called "app.js"
+- `netstat -tulpn|grep -f <(ps -a|grep node|awk '{print $1}'|xargs ps -Flww -p|grep "node app.js"|awk '{print $4}')` list ports not as elegant
+
 
 
 
