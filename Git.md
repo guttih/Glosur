@@ -14,14 +14,17 @@
 - `git remote -v` Skoða slóða að origin `https://github.com/Hubar/ticktacktoe.git`
 - `git log --graph` Skoða branch tree
 - `gitk` Opna gui sem sýnir branch tree
-- `git remote` skoða hvaða remote þú ert tengdur.. þ.e.a.s. ef þú gerir push þá fer það þangað
 - `git status` sjá status á hvaða branchi maður er og stöðuna á því (working dir).  Your branch is ahead of origin/master by 1 commit.  Þitt local branch is 1 commit.  Þýðir að þitt local branch er einu committi á undan master branchinu
 - `git log` skoða commit sögu.
 - `git log -p` skoða breytingarnar
+- `git log origin/dev..HEAD` Listar þetta öll un-pushed commit á dev. (Þ.e.a.s ef þú ert á dev branch-i)
+- `git remote` skoða hvaða remote þú ert tengdur.. þ.e.a.s. ef þú gerir push þá fer það þangað
 - `git add filename` addar breyttri skrá á stage-ið
 - `git clean -f` Remove untracked files from the working tree
 - `git reset HEAD filename` tekur breyttri skrá af stage-inu.
 - `git reset --hard origin/master` Hendir öllu á current branch og gerir það eins og master branch (lætur head benda á sama stað og master branch gerir)
+
+
 
 
 - `git checkout -b branchname`  checka út local sem nýtt branch.  Nú ef þú gertir git status `git status` þá kemur On branch branchname
