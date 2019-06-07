@@ -12,6 +12,8 @@
 
 # Git glósur
 - `git remote -v` Skoða slóða að origin `https://github.com/Hubar/ticktacktoe.git`
+- `git log --graph` Skoða branch tree
+- `gitk` Opna gui sem sýnir branch tree
 - `git remote` skoða hvaða remote þú ert tengdur.. þ.e.a.s. ef þú gerir push þá fer það þangað
 - `git status` sjá status á hvaða branchi maður er og stöðuna á því (working dir).  Your branch is ahead of origin/master by 1 commit.  Þitt local branch is 1 commit.  Þýðir að þitt local branch er einu committi á undan master branchinu
 - `git log` skoða commit sögu.
