@@ -29,6 +29,7 @@ and end by adding <br>
 
 \`\`\`shell   <i>(For Command line linux and dos)</i><br>
 ```shell
+cd /var/www
 cat file.txt
 ```
 \`\`\`js <i>(For JavaScript)</i><br>
