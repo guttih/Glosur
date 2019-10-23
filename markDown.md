@@ -1,23 +1,26 @@
-#Notes about Markdown 
-#Heading \#heading
-##Subtitle \#\# subtitle
-###second subtitle \#\#\#second subtitle
-####third sub \#\#\#\#third sub
-#####fourth \#\#\#\#\#fourth sub
+# Notes about Markdown 
+Here is a much better page about MD [www.markdownguide](https://www.markdownguide.org/basic-syntax/).
+
+
+# Heading `# heading`
+## Subtitle `## subtitle`
+### second subtitle `### second subtitle`
+#### third sub `#### third sub`
+##### fourth `##### fourth sub`
 
 ##Force linebreak
 \<br\>
 
 ##Links
 \[text\](link)<br>
-[Mastering markdown](https://guides.github.com/features/mastering-markdown/)
+[markdownguide](https://www.markdownguide.org/basic-syntax/), [Mastering markdown](https://guides.github.com/features/mastering-markdown/)
  and
 [Syntax highligting](https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown)
 
-##Escape
+## Escape
 This: ``` \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! ``` returns this: \\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \!
 
-##Code
+## Code
 For showing code for a specific language you start by adding<br>
 \`\`\`language<br>
 your code here<br>
