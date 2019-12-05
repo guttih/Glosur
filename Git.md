@@ -18,6 +18,9 @@
 - `git log` skoða commit sögu.
 - `git log -p` skoða breytingarnar
 - `git log origin/dev..HEAD` Listar þetta öll un-pushed commit á dev. (Þ.e.a.s ef þú ert á dev branch-i)
+Finna sögu og frá hvaða commiti branch er búið til
+- `git reflog show --no-abbrev <branch-name>` 
+
 - `git remote` skoða hvaða remote þú ert tengdur.. þ.e.a.s. ef þú gerir push þá fer það þangað
 - `git add filename` addar breyttri skrá á stage-ið
 - `git clean -f` Remove untracked files from the working tree
