@@ -113,6 +113,10 @@ git reset --hard origin/master
 git pull origin master
 ```
 
+## Hreinsa burtu skrár sem ætti að .gitignor - a
+ - `git clean -xdn` Sýna lista yfir skrár sem hreinsun myndi eyða
+ - `git clean -xdf` Framkvæma hreinsun / eyða skrám
+
 ## hooks
 Með því að breyta skrá með ákveðnu skráarnafni í möppunni `.git/hooks` þá má gera sjálfvirkni við ákveðna git aðgerðir.
 
