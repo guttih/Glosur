@@ -43,6 +43,15 @@ find . -type d -name node_modules -exec rm -rf {} \;
 When a directory is deleted then the text `
  No such file or directory` will be displayed.
  
+ ### Search for files
+ Finds all files with name that ends with .pdf
+```shell
+find .  -name "*.pdf"
+```
+This will search sub directories also
+ 
+ 
+ 
  ### Connections
  ## nc command
 `nc -vz {host} {port}`  
