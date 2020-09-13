@@ -24,11 +24,9 @@
 - `git clean -f` Remove untracked files from the working tree
 - `git reset HEAD filename` tekur breyttri skrá af stage-inu.
 - `git reset --hard origin/master` Hendir öllu á current branch og gerir það eins og master branch (lætur head benda á sama stað og master branch gerir)
-
-
-
-
 - `git checkout -b branchname`  checka út local sem nýtt branch.  Nú ef þú gertir git status `git status` þá kemur On branch branchname
+- `git branch -d <local-branch>` Eyða local branchi 
+- `git push origin --delete <remote-branch-name>` Eyða remote branch **Hættulegt**
 - `git push origin master`pusha commitum á origin/master
 - `git push -u origin minus`pusha minus branchi á origin -u upstream
 - `git fetch origin GetPositionFromPlayer` Sækja bara branchið GetPositionFromPlayer.  Gott til að tékka á breytingum áður en pullrequesta er acceptuð
