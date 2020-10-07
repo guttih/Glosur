@@ -13,7 +13,7 @@ Búa til container
 eftir að hann er kominn í gang opna git bash í rót island.is
 	add data
 		cd  ~/source/repos/StafraentIsland/island.is
-		h
+		curl -H 'Content-Type: application/x-ndjson' -XPOST localhost:9200/_bulk --data-binary '@./libs/api-catalogue/elastic/initialData.json'
 	
  
 
