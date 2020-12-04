@@ -82,6 +82,22 @@ Hægt er að breyta commit message á gömlu commiti. Textaleitaðu á [þessari
 
 
 ## You can pull changes from master to your branch
+
+### Using rebase
+Vera staddur á þínu branchi og sækja main inn í það, en gera þín commit þau nýjustu
+```shell 
+git checkout mybranch
+git pull origin main -r
+#Skoða hvaða commit eru nýjust (þín eiga að vera nýjust), getur appendað tölu param til að fá að vita hve mikið þú vilt sjá
+git log --oneline 
+# Þegar þú pushar á branchið þitt þá þarftu að nota -f (force) því annars færðu miljón reviewers á kóða sem breyttist bara á main (en ekki bara þínu branchi)
+git push -f origin mybranch
+# svo getur þú bara haldið áfram á branchinu þínu eins og venjulega
+git add .
+git commit -m "msg after merging"
+git push origin mybranch
+```
+
 ### Using fetch & pull
 ```shell 
 git checkout my_branch         # move on your branch (make sure it exists)
@@ -99,6 +115,7 @@ git add .
 git commit -m "msg after merging"
 git push origin mybranch
 ```
+
 #ssh
 To change beetwen two ssh files saved in config ssh -T bitbuc
 f.example if host was bitbuc then this would change to that profile
