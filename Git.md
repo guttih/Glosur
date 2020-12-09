@@ -90,8 +90,11 @@ git checkout mybranch
 git pull origin main -r
 #Skoða hvaða commit eru nýjust (þín eiga að vera nýjust), getur appendað tölu param til að fá að vita hve mikið þú vilt sjá
 git log --oneline 
+
+# Ef þú ert beðinn um að pulla, ekki gera það því þá fer historyan í rugl.  notaðu -f rofann þegar þú pushar
 # Þegar þú pushar á branchið þitt þá þarftu að nota -f (force) því annars færðu miljón reviewers á kóða sem breyttist bara á main (en ekki bara þínu branchi)
 git push -f origin mybranch
+
 # svo getur þú bara haldið áfram á branchinu þínu eins og venjulega
 git add .
 git commit -m "msg after merging"
