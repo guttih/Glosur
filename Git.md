@@ -100,6 +100,27 @@ git add .
 git commit -m "msg after merging"
 git push origin mybranch
 ```
+#### Using rebase conflicts
+Þegar það er conflict á einhverjum skrám eftir að þú gefur skipunina `git pull origin main -r` þá þarft þú að resolva það conflict, adda skránum aftur og gefa svo skipunina ` git rebase --continue`  þegar það er búið, þá getur þú pushað svona: `git push -f origin mybranch`. 
+
+ps. Þegar þú ert að rebasea þá býr git til temorary rebase branch og í þessu tilviki þá ertu að vinna á því
+
+```shell 
+git checkout mybranch
+git pull origin main -r
+# Let's say you got some files which are in conflict
+# Open text editor and resolve the conflicts
+
+# add all files (which were in conflict)
+git add .
+
+# give next command, and accept the default text by exiting the editor (for me its vim and exit key comination is ':x' and press 'return'
+git rebase --continue
+
+#now you can push and to keep the history correct use -f
+git push -f origin mybranch
+
+```
 
 ### Using fetch & pull
 ```shell 
