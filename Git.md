@@ -158,11 +158,9 @@ git pull origin master
  - `git clean -xdf` Framkvæma hreinsun / eyða skrám
 
 ## Close issue with commit message
-```
- syntax: KEYWORD #ISSUE-NUMBER
- possible keywords: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved
+ - Syntax `KEYWORD #ISSUE-NUMBER`
+ - Keywords: `close`, `closes`, `closed`, `fix`, `fixes`, `fixed`, `resolve`, `resolves`, `resolved`.
  
-```
 | Linked issue                    | Syntax                                | Example                                                      |
 |:--------------------------------|:--------------------------------------|:-------------------------------------------------------------|
 | Issue in the same repository    | KEYWORD #ISSUE-NUMBER                 | Closes #10                                                   |
