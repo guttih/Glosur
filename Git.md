@@ -157,6 +157,22 @@ git pull origin master
  - `git clean -xdn` Sýna lista yfir skrár sem hreinsun myndi eyða
  - `git clean -xdf` Framkvæma hreinsun / eyða skrám
 
+## Close issue with commit message
+```
+ syntax: KEYWORD #ISSUE-NUMBER
+ possible keywords: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolved
+ 
+```
+| Linked issue                    | Syntax                                | Example                                                      |
+|:--------------------------------|:--------------------------------------|:-------------------------------------------------------------|
+| Issue in the same repository    | KEYWORD #ISSUE-NUMBER                 | Closes #10                                                   |
+| Issue in a different repository | KEYWORD OWNER/REPOSITORY#ISSUE-NUMBER | Fixes octo-org/octo-repo#100                                 |
+| Multiple issues                 | Use full syntax for each issue        | Resolves #10, resolves #123, resolves octo-org/octo-repo#100 |
+|                                 | 	                                     |                                                              |
+
+
+ [documentation](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+
 ## hooks
 Með því að breyta skrá með ákveðnu skráarnafni í möppunni `.git/hooks` þá má gera sjálfvirkni við ákveðna git aðgerðir.
 
