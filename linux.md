@@ -36,7 +36,9 @@ Pid = process Id number = that is the Id of a running process
 `Ctrl-a` -> `]`: paste the copied texte  
 
 ### Make a bootable USB drive
-1. Start by downloading the ISO for the operationg system you want to install
+This tutorial describes how to create a bootable USB operating system disk. 
+I selected the [Centos Stream 9](https://www.centos.org/centos-stream/) to setup. This manual is based on information from this [page](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick-on-linux/).
+1. Start by downloading the ISO for the operating system you want to install
   - In this example the ISO was downloaded to:`~/Downloads/CentOS-Stream-9-latest-x86_64-dvd1.iso`
 2. Insert the USB drive
 3.  Print device directory tree to find device path to your inserted USB drives
@@ -66,6 +68,12 @@ Pid = process Id number = that is the Id of a running process
    sudo dd bs=4M if=~/Downloads/CentOS-Stream-9-latest-x86_64-dvd1.iso of=/dev/sdb status=progress oflag=sync
    sudo 
    ```
+   When the command finishes, you should have a bootable OS installation disk.
+5. Insert the bootable OS installation USB into the computer you want to install the OS on
+6. Turn on the computer (this should run the OS installation process)
+   - If the OS installation process does not start 
+      I.  You will need to change the boot order in you BIOS so that the USB drive is first in the boot order.
+      II. Turn you computer off, and then off again
 
 ### Delete (Deltree)
  Delete all node folders and theyr content, recursivly
