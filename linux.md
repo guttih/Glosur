@@ -65,7 +65,7 @@ I selected the [Centos Stream 9](https://www.centos.org/centos-stream/) to setup
 4. Unmount the the device and flash the iso with the dd command
    ```shell 
    sudo umount /dev/sdb1
-   sudo dd bs=4M if=~/Downloads/CentOS-Stream-9-latest-x86_64-dvd1.iso of=/dev/sdb status=progress oflag=sync
+   sudo dd bs=4M  status=progress oflag=sync of=/dev/sdbif=~/Downloads/CentOS-Stream-9-latest-x86_64-dvd1.iso
    sudo 
    ```
    When the command finishes, you should have a bootable OS installation disk.
