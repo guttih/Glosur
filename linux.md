@@ -35,6 +35,11 @@ Pid = process Id number = that is the Id of a running process
 `Ctrl-a` -> `[`: start the copy mode  
 `Ctrl-a` -> `]`: paste the copied texte  
 
+### List available disks
+ Search for inserted USB drives or stics with
+```shell
+lsblk
+```
 ### Delete (Deltree)
  Delete all node folders and theyr content, recursivly
 ```shell
