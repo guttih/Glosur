@@ -52,6 +52,11 @@ When a directory is deleted then the text `
 find .  -name "*.pdf"
 ```
 This will search sub directories also
+
+## Text manipulation
+
+- awk `https://www.grymoire.com/Unix/Awk.html`
+- sed `https://www.grymoire.com/Unix/Sed.html`
  
  
  
