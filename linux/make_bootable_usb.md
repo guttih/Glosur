@@ -1,4 +1,5 @@
-# Make a bootable USB drive
+# Formatting USB
+## Make a bootable USB drive
 This tutorial describes how to create a bootable USB operating system disk. 
 I selected the [Centos Stream 9](https://www.centos.org/centos-stream/) to setup. This manual is based on information from this [page](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick-on-linux/).
 1. Start by downloading the ISO for the operating system you want to install
@@ -37,3 +38,20 @@ I selected the [Centos Stream 9](https://www.centos.org/centos-stream/) to setup
    - If the OS installation process does not start 
       I.  You will need to change the boot order in you BIOS so that the USB drive is first in the boot order.
       II. Turn you computer off, and then off again
+
+## Changing filesystem
+Changing or creating a new file system on a device.
+
+*Note, In this example we are using **sdb1** as an example device.  Be carefule you are using the correct device.*
+
+```
+df -Th # or use lsblk
+umount /dev/sdb1
+```
+Select one of the following file system.  (prefferred is fat32)
+sudo mkfs.ext3 -m 0 /dev/sdb1
+ - To format a USB drive with FAT32     file system run: `sudo mkfs.vfat /dev/sdb1`
+ - To format a USB drive using the NTFS file system run: `sudo mkfs.ntfs /dev/sdb1`
+ - To format a USB drive in accordance with the exFAT file system use: `sudo mkfs.exfat /dev/sdb1`
+ - To format a USB drive in accordance with the exFAT file system use: `sudo mkfs.ext4 /dev/sdb1
+
