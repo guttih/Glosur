@@ -53,5 +53,5 @@ sudo mkfs.ext3 -m 0 /dev/sdb1
  - To format a USB drive with FAT32     file system run: `sudo mkfs.vfat /dev/sdb1`
  - To format a USB drive using the NTFS file system run: `sudo mkfs.ntfs /dev/sdb1`
  - To format a USB drive in accordance with the exFAT file system use: `sudo mkfs.exfat /dev/sdb1`
- - To format a USB drive in accordance with the exFAT file system use: `sudo mkfs.ext4 /dev/sdb1
+ - To format a USB drive in accordance with the exFAT file system use: `sudo mkfs.ext4 /dev/sdb1`
 
