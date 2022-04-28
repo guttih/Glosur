@@ -55,3 +55,5 @@ sudo mkfs.ext3 -m 0 /dev/sdb1
  - To format a USB drive in accordance with the exFAT file system use: `sudo mkfs.exfat /dev/sdb1 -n NewLabel`
  - To format a USB drive in accordance with ext4 file system use: `sudo mkfs.ext4 /dev/sdb1`
 
+If you run into problems, something like *mkfs.ext4: invalid blocks 'flassi' on device '/dev/sdb*, you might need to wipe the device with command `sudo dd if=/dev/zero of=/dev/sdb1` before giving the mkfs.???? command
+
