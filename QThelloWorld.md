@@ -24,7 +24,7 @@
     ```
 5. Create the project file by running command
     ```shell
-    qmake -project
+    qmake -project -o test.pro
     ```
 6. Add add the line `QT += widgets` to top of the newly created `test.pro` file.
 7. Run following shell commands to make the executable
