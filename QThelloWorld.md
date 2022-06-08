@@ -43,5 +43,6 @@
        ```shell
        qmake -project && echo 'QT += widgets' | cat - test.pro > temp && mv temp test.pro && qmake && make && ./test
        ```
-  
+9. If using git
+   Consider adding this [.gitignore](https://github.com/github/gitignore/blob/main/Qt.gitignore)  
   
