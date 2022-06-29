@@ -4,6 +4,8 @@
 Pid = process Id number = that is the Id of a running process  
 `Ctrl-a` -> `c` =  `Ctrl-a` followed by `c`  
  
+ ### Copy
+ - `cp -avRf /mnt/* /tmp/rhel7` Copy all content of **/mnt** including hidden files and sub dirs into directory **/tmp/rhel7** and show progress
  
  ### List processes
 - `ps -a` : List all process and theyr ID
