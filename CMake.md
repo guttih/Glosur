@@ -27,9 +27,16 @@ All commands below assume you are located in the **build directory**
   ```
   cpack
   ```
-
- 
   
+  ## Integrating Google Test Into CMake Projects
+  
+ You should follow [TDD] when making your apps and libs.  [GoogleTest] should help with that ([GoogleTest repo]).  See the [Quickstart].
+ - I think you only need to add the the *FetchContent_MakeAvailable* command in your top most *CMakeLists.txt* all sub-projects will be able to access the test.
+  
+[Quickstart]: https://google.github.io/googletest/quickstart-cmake.html
+[GoogleTest]: https://google.github.io/googletest/
+[GoogleTest repo]: https://github.com/google/googletest 
+[TDD]: https://en.wikipedia.org/wiki/Test-driven_development
 [more info here]: https://cmake.org/cmake/help/latest/guide/tutorial/Packaging%20an%20Installer.html
 [source]: https://stackoverflow.com/questions/41471620/cmake-support-make-uninstall#answer-44649542
 [Tutorial]: https://cmake.org/cmake/help/latest/guide/tutorial/index.html#
