@@ -4,20 +4,27 @@
 
 ## CMake commands
 
-- Build project for the first time, this should give you the executable to run
-  ```
+Cd into the root of your project and create the build directory, it should  be a sibling to the top *CMakeLists.txt* file.
+```
   mkdir build
   cd build
+```
+All commands below assume you are located in the **build directory**
+
+- Build project for the first time, this should give you the executable to run
+  ```
   cmake --build .
   make
   ls
   ```
-- Uninstalling an installed CMake (make install) package.  If you have the access to the *install_manifest.txt* file you can delete all installed files with this command:
+- Change options of your project from the build directory with eather `ccmake .` or `cmake-gui .`
+- Installing from the build directory with `cmake --install .` alternatively to install to a different location do `cmake --install . --prefix "/home/myuser/installdir"`
+- Uninstalling an installed CMake (make install) package.  If you have the access to the *install_manifest.txt* file you can delete all installed files with the command below command:       [source]
   ```
   xargs rm < install_manifest.txt
   ```
-  [Uninstall answer]
+  
 
-[Uninstall answer]: https://stackoverflow.com/questions/41471620/cmake-support-make-uninstall#answer-44649542
+[source]: https://stackoverflow.com/questions/41471620/cmake-support-make-uninstall#answer-44649542
 [Tutorial]: https://cmake.org/cmake/help/latest/guide/tutorial/index.html#
 [Tutorial files]: https://gitlab.kitware.com/cmake/cmake/-/tree/master/Help/guide/tutorial
