@@ -8,6 +8,7 @@
   ```
   xargs rm < install_manifest.txt
   ```
+  [Uninstall answer]
 
 [Uninstall answer]: https://stackoverflow.com/questions/41471620/cmake-support-make-uninstall#answer-44649542
 [Tutorial]: https://cmake.org/cmake/help/latest/guide/tutorial/index.html#
