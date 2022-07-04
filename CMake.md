@@ -23,14 +23,14 @@ All commands below assume you are located in the **build directory**
   ```
   xargs rm < install_manifest.txt
   ```
-- **Create package** Package your project
+- **Create package** Package your project [more info here].
   ```
   cpack
   ```
 
  
   
-
+[more info here]: https://cmake.org/cmake/help/latest/guide/tutorial/Packaging%20an%20Installer.html
 [source]: https://stackoverflow.com/questions/41471620/cmake-support-make-uninstall#answer-44649542
 [Tutorial]: https://cmake.org/cmake/help/latest/guide/tutorial/index.html#
 [Tutorial files]: https://gitlab.kitware.com/cmake/cmake/-/tree/master/Help/guide/tutorial
