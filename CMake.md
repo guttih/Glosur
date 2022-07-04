@@ -4,6 +4,14 @@
 
 ## CMake commands
 
+- Build project for the first time, this should give you the executable to run
+  ```
+  mkdir build
+  cd build
+  cmake --build .
+  make
+  ls
+  ```
 - Uninstalling an installed CMake (make install) package.  If you have the access to the *install_manifest.txt* file you can delete all installed files with this command:
   ```
   xargs rm < install_manifest.txt
