@@ -15,7 +15,8 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
  - `dnf module provides <package-name-spec>` [module provides] Lists all modular packages matching <package-name-spec> from all modules (including disabled), along with the modules and streams they belong to.
    
 ## rpm
- 
+
+ -  `sudo find /var/cache/PackageKit/8/metadata/*/packages/ -name <rpm-file>` Quick search for a package
  - `rpm -qi <pacakge>` *query installed* Display installed information along with package version and short description
  - `rpm -ivh <rpm-file>` Install a rpm file
  - `rpm -Uvh <rpm-file>`	*Upgrade package*
