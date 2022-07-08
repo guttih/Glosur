@@ -28,8 +28,10 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
  - `rpm -qa --last` 	Display list of all recently installed RPMs
  - `rpm -qpR <file.rpm>` Find out what dependencies a rpm file has
  - `rpm -qR <package>` Find out what dependencies a package has
- - query option
+ - query option in combination with `-q`
     ```
+     example: rpm -q --whatrequires myawsome.rpm
+ 
      -a, --all                         query/verify all packages
      -f, --file                         query/verify package(s) owning file
      -g, --group                        query/verify package(s) in group
