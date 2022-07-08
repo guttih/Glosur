@@ -28,7 +28,7 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
  - `rpm -qR <package>` Find out what dependencies a package has
  - query option
     ```
-      -a, --all                         query/verify all packages
+     -a, --all                         query/verify all packages
      -f, --file                         query/verify package(s) owning file
      -g, --group                        query/verify package(s) in group
      -p, --package                      query/verify a package file
