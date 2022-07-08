@@ -19,6 +19,7 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
  - `rpm -qi <pacakge>` *query installed* Display installed information along with package version and short description
  - `rpm -ivh <rpm-file>` Install a rpm file
  - `rpm -Uvh <rpm-file>`	*Upgrade package*
+ - `rpm --reinstall <rpm-file>`	*reinstall a package*
  - `rpm -ev <package>` 	Erase/remove/uninstall an installed package
  - `rpm -ev --nodeps <package>` *Erase*/remove/uninstall an installed package without checking for dependencies
  - `rpm -qf </path/to/file>` Which package a file belongs to i.e. find what package owns the file
