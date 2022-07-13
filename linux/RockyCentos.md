@@ -35,6 +35,7 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
      -a, --all                         query/verify all packages
      -f, --file                         query/verify package(s) owning file
      -g, --group                        query/verify package(s) in group
+     -l, --list                         list files in package
      -p, --package                      query/verify a package file
          --pkgid                        query/verify package(s) with package
          --hdrid                        query/verify package(s) with header
