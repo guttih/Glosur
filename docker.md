@@ -33,7 +33,7 @@ starta projectinu docker-compose up
 ## New notes created after **2022-11-16**
 
 ### Sharing a directory
-#### share host directory to container
+#### share host directory to container (persistent)
 
 1. On host create a folder and file
     ```shell
@@ -51,7 +51,7 @@ starta projectinu docker-compose up
          cat /shared-dir/important.txt
     ```
 
-#### share container directory to another container
+#### Share container directory to another container (Ephemeral)
 
 This dir exists while a container is using it (regardless of who created  it)
 1. Create a shared directory in container named **ubuntu1** and run the container
