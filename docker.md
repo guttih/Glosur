@@ -9,15 +9,24 @@
       | [images](https://docs.docker.com/engine/reference/commandline/images/)
       | [volume](https://docs.docker.com/engine/reference/commandline/volume/)
       | [compose](https://docs.docker.com/compose/reference/)
+      | [Dockerfile](https://docs.docker.com/engine/reference/builder/)
+    - Create a new image from a container’s changes [commit](https://docs.docker.com/engine/reference/commandline/commit/)
+ - Keyboard shortcuts when you are inside a running container
+      - `ctrl+p, ctrl+q` Detach from a running container
+         - To attach again, type command `docker attach <containerName>`
+ - Docker file syntax explained in [linkedin learning](https://www.linkedin.com/learning/learning-docker-2018/dockerfile-syntax?autoSkip=true&autoplay=true&contextUrn=urn%3Ali%3AlyndaLearningPath%3A5bb4fa9b498e2e532e6df920&resume=false)
+      
 
 ## Highlights
 - `docker images` List available docker images
 - `docker container ls` List local containers
 - `docker ps` List running containers
 - `docker ps -a` List all running containers
+- `docker --rm -ti <imageName> bash` Remove/delete a container when it has been run
+- `docker -d -ti <imageName> bash` Detach from a container, but keep it running
 - `docker rm <containerName>` Remove/delete a container with a specific name
 - `docker inspect <containerName>` View Info on container
-- `docker exec -it <containerName> bash` opna shell í ákveðnum docker
+- `docker exec -it <containerName> bash` opna (aðra) shell í ákveðnum docker
 - `docker pull postgres` Download docker image called postgres
 - `docker-compose up` run docker-compose.yaml file
 - `docker run -p 5432:5432 -e POSTGRES_PASSWORD=password --name pg postgres` Run a docker image called postgres and port-forward  port 5432 on that container to port 5432 on host machine(localhost)
@@ -70,6 +79,8 @@ This dir exists while a container is using it (regardless of who created  it)
     - Run this command on the host machine
         ```shell
             docker run -ti --name ubuntu2 --volume /shared-dir2 ubuntu bash
+            #Alternately access all volumes from a specific container
+              #docker run -ti --name ubuntu2 --volumes-from ubuntu1 ubuntu bash
         ```
 3. Inside the container **ubuntu2** create a file in the shared folder
     ```shell
@@ -82,6 +93,28 @@ This dir exists while a container is using it (regardless of who created  it)
     ```
 
 
+### Make docker store images and container on external drive
 
+You can force docker to place it's internal storage/volumes/cache/etc folder on your external drive. Stop docker
+ ```shell
+sudo service docker stop
+ ```
 
+Edit or create the daemon override file
+```shell
+    sudo vim /etc/docker/daemon.json
+```
+
+set /add this to point to your new location
+```json
+{
+"data-root": "/path/to/externaldrive/docker-files"
+}
+```
+
+At this point you can move the content of docker's default storage location in /var/lib/dockerto your new location, do this if you want to save your existing volumes or images. Then restart docker
+
+```shell
+sudo service docker restart
+```
 [Docker Commands]: https://docs.docker.com/engine/reference/commandline/docker/
