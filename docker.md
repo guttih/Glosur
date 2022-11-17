@@ -8,6 +8,7 @@
       | [container](https://docs.docker.com/engine/reference/commandline/container/)
       | [images](https://docs.docker.com/engine/reference/commandline/images/)
       | [volume](https://docs.docker.com/engine/reference/commandline/volume/)
+      | [compose](https://docs.docker.com/compose/reference/)
 
 ## Highlights
 - `docker images` List available docker images
