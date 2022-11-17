@@ -27,13 +27,19 @@
 - Click here to visit [Docker Commands] from docker
 
 ### docker glósur vegna raf-isl
+
 projectið : https://github.com/MattiSig/raf-isl
 starta projectinu docker-compose up
 
 ## New notes created after **2022-11-16**
 
 ### Sharing a directory
-#### share host directory to container (persistent)
+
+Directories and files can be shared between 
+
+    - host and container (persistent)
+    - container and another container (ephemeral)
+#### Share host directory to container (Persistent)
 
 1. On host create a folder and file
     ```shell
@@ -51,7 +57,7 @@ starta projectinu docker-compose up
          cat /shared-dir/important.txt
     ```
 
-#### Share container directory to another container (Ephemeral)
+#### Share container directory to another container 
 
 This dir exists while a container is using it (regardless of who created  it)
 1. Create a shared directory in container named **ubuntu1** and run the container
