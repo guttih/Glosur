@@ -9,7 +9,7 @@
       | [images](https://docs.docker.com/engine/reference/commandline/images/)
       | [volume](https://docs.docker.com/engine/reference/commandline/volume/)
 
-
+## Highlights
 - `docker images` List available docker images
 - `docker container ls` List local containers
 - `docker ps` List running containers
