@@ -29,11 +29,6 @@
 projectið : https://github.com/MattiSig/raf-isl
 starta projectinu docker-compose up
 
-#### aðilar sem þekkja
-- Hilmar ævar hilmarsson 
-- Matthías Sigurbjörnsson
-
-
 ## New notes created after **2022-11-16**
 
 ### Sharing a directory
