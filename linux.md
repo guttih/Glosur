@@ -38,6 +38,7 @@ Pid = process Id number = that is the Id of a running process
 `Ctrl-a` -> `]`: paste the copied texte  
 
 ### Make a bootable USB drive
+
 Tutorial [linux/make_bootable_usb.md](./linux/make_bootable_usb.md)
 
 ### Delete (Deltree)
@@ -47,12 +48,20 @@ find . -type d -name node_modules -exec rm -rf {} \;
 ```
 When a directory is deleted then the text `
  No such file or directory` will be displayed.
- 
+
+### Size on disk
+
+to get the size of a directory type
+```
+du -h <path_to_dir>
+```
  ### Search for files
  Finds all files with name that ends with .pdf
 ```shell
 find .  -name "*.pdf"
 ```
+
+
 This will search sub directories also
 
 ## Text manipulation
