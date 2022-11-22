@@ -22,9 +22,11 @@
 - `docker container ls` List local containers
 - `docker ps` List running containers
 - `docker ps -a` List all running containers
-- `docker --rm -ti <imageName> bash` Remove/delete a container when it has been run
+- `docker run --rm -ti <imageName> bash` Remove/delete a container when it has been run
 - `docker -d -ti <imageName> bash` Detach from a container, but keep it running
 - `docker rm <containerName>` Remove/delete a container with a specific name
+- `docker container commit <containerId> <containerName[/testimage:version3]>`	Create a new image from a container’s changes. [Documentation](https://docs.docker.com/engine/reference/commandline/commit/)
+    - For example: `docker commit c3f279d17e0a  svendowideit/testimage:version3`	
 - `docker inspect <containerName>` View Info on container
 - `docker exec -it <containerName> bash` opna (aðra) shell í ákveðnum docker
 - `docker pull postgres` Download docker image called postgres
