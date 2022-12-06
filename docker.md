@@ -15,6 +15,7 @@
       - `ctrl+p, ctrl+q` Detach from a running container
          - To attach again, type command `docker attach <containerName>`
  - Docker file syntax explained in [linkedin learning](https://www.linkedin.com/learning/learning-docker-2018/dockerfile-syntax?autoSkip=true&autoplay=true&contextUrn=urn%3Ali%3AlyndaLearningPath%3A5bb4fa9b498e2e532e6df920&resume=false)
+ - How to [run a script](https://devopscube.com/run-scripts-docker-arguments#how-to-run-custom-script-inside-docker) from a container
       
 
 ## Highlights
