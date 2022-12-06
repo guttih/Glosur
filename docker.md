@@ -16,6 +16,7 @@
          - To attach again, type command `docker attach <containerName>`
  - Docker file syntax explained in [linkedin learning](https://www.linkedin.com/learning/learning-docker-2018/dockerfile-syntax?autoSkip=true&autoplay=true&contextUrn=urn%3Ali%3AlyndaLearningPath%3A5bb4fa9b498e2e532e6df920&resume=false)
  - How to [run a script](https://devopscube.com/run-scripts-docker-arguments#how-to-run-custom-script-inside-docker) from a container
+ - Docker testing with [Play With Docker](https://labs.play-with-docker.com/p/ce7gq9e0qau0008pjtd0)
       
 
 ## Highlights
