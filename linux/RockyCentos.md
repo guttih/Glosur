@@ -50,6 +50,13 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
          --whatsupplements              query/verify the package(s) which
          --whatenhances                 query/verify the package(s) which
     ```
+ 
+ ## screen
+ 
+ Change the resolution to a spesific resolution
+ 
+ 1. Get available resolutions `xrandr -q`
+ 2. Then select one from the list, f.example `xrandr --output VGA-0 --mode 1280x1024`
   
   [provides]: https://dnf.readthedocs.io/en/latest/command_ref.html#provides-command
   [module provides]: https://dnf.readthedocs.io/en/latest/command_ref.html#module-provide-command-label
