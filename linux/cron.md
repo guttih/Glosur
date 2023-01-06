@@ -36,8 +36,10 @@ M H D Mo W /path/to/script
 ```
 
 **Further more** 
- - Use * to imply every hour, day, etc.
- - Use - to span hours, days, etc.
+ - Use `*` to imply every hour, day, etc.
+ - Use `-` to span hours, days, etc.
+ - Use `1/2` for every odd something
+ - Use `*/2` for every even something
 
 
 #### variables
@@ -54,28 +56,36 @@ or refix path to script with these keywords
 
 Using the **variables** or the **M H D Mo W format**
  
- - Executes '/root/scriptfile.sh' on June 15th at 2:30AM
+ - Executes `/root/scriptfile.sh` on June 15th at 2:30AM
    ```
    30 02 15 6 * /root/scriptfile.sh
    ```
-- Executes '/root/scriptfile.sh' every Sunday at 2:30AM
+- Executes `/root/scriptfile.sh` every Sunday at 2:30AM
    ```
    30 02 * * 0 /root/scriptfile.sh
    ```
-- Executes '/root/scriptfile.sh' on June 15th at 2:30AM and 2:30PM
+- Executes `/root/scriptfile.sh` on June 15th at 2:30AM and 2:30PM
    ```
    30 02,14 15 6 * /root/scriptfile.sh
    ```
-- Executes '/root/scriptfile.sh' every Sunday at 2:30AM, 3:30AM, 4:30AM, and 5:30AM
+- Executes `/root/scriptfile.sh` every Sunday at 2:30AM, 3:30AM, 4:30AM, and 5:30AM
    ```
    30 02-05 * * 0 /root/scriptfile.sh
    ```
-- Executes '/root/scriptfile.sh' every weekday ath midnight
+- Executes `/root/scriptfile.sh` every weekday ath midnight
    ```
    0 0 * * 1-5 /root/scriptfile.sh
    ```
+- Executes `/root/scriptfile.sh` every odd minutes
+   ```
+   1/2 * * * * /root/scriptfile.sh
+   ```
+- Executes `/root/scriptfile.sh` every even minutes
+   ```
+   */2 * * * * /root/scriptfile.sh
+   ```
 
-- Executes '/root/scriptfile.sh' on the first day of every month
+- Executes `/root/scriptfile.sh` on the first day of every month
    ```
    @monthly /root/scriptfile.sh
    ```
