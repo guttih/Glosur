@@ -91,6 +91,10 @@ Using the **variables** or the **M H D Mo W format**
    ```
    @monthly /root/scriptfile.sh
    ```
+- Executes `/root/scriptfile.sh` last day of each month at 15:20
+   ```
+   20 15 28-31 * * [ "$(date +\%d -d tomorrow)" = "01" ]  && /root/scriptfile.sh
+   ```
 - Log time and text to a file every odd and even minute
    ```
    DATEVAR=date +%Y-%m-%dT%H:%M:%S
@@ -102,7 +106,19 @@ Using the **variables** or the **M H D Mo W format**
       2023-01-13T11:23:01 every other odd  minute
       2023-01-13T11:24:01 every other even minute
       ```
-
+- A number of jobs which add text to a log file to test how things work
+   ```
+   DATEVAR=date +%Y-%m-%dT%H:%M:%S
+   1-59/2    *  * * * echo "$($DATEVAR) every other odd  minute"                 >>$HOME/cron.log 
+   */2       *  * * * echo "$($DATEVAR) every other even minute"                 >>$HOME/cron.log 
+   *         *  * * 1 echo "$($DATEVAR) every monday, every minute"              >>$HOME/cron.log
+   00       10  * * 2 echo "$($DATEVAR) every tuesday at 10:00                   >>$HOME/cron.log 
+   *        13  * * 3 echo "$($DATEVAR) every wednesday, every minute at 13:xx"  >>$HOME/cron.log
+   10       13  * * 3 echo "$($DATEVAR) every thursday at 13:10"                 >>$HOME/cron.log
+   0-59/5 8-18/2 * * 1-5 echo "$($DATEVAR) every 5 minute where first minute is 0 and last minute is 55 on even hour on workdays where first hour is 8 and last hour is 18">>$HOME/cron.log
+   10  8-18/2 * * 0,6 echo "$($DATEVAR) every even hour on minute 10, on saturdays and sundays where first hour is 8 and last hour is 18">>$HOME/cron.log
+   10    13 28-31 * * [[ "$(date --date=tomorrow +\%d)" == "01" ]] &&  echo "$($DATEVAR) Last day of month at 13:10">>$HOME/cron.log
+   ```
 
 
 
