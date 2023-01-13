@@ -40,7 +40,7 @@ M H D Mo W /path/to/script
 **Further more** 
  - Use `*` to imply every hour, day, etc.
  - Use `-` to span hours, days, etc.
- - Use `1/2` for every odd something
+ - Use `1-59/2` for every odd something
  - Use `*/2` for every even something
 
 
@@ -80,7 +80,7 @@ Using the **variables** or the **M H D Mo W format**
    ```
 - Executes `/root/scriptfile.sh` every odd minutes
    ```
-   1/2 * * * * /root/scriptfile.sh
+   1-59/2 * * * * /root/scriptfile.sh
    ```
 - Executes `/root/scriptfile.sh` every even minutes
    ```
@@ -91,6 +91,17 @@ Using the **variables** or the **M H D Mo W format**
    ```
    @monthly /root/scriptfile.sh
    ```
+- Log time and text to a file every odd and even minute
+   ```
+   DATEVAR=date +%Y-%m-%dT%H:%M:%S
+   1-59/2 * * * * echo "$($DATEVAR) every other odd  minute">>$HOME/cron.log 
+   */2    * * * * echo "$($DATEVAR) every other even minute">>$HOME/cron.log 
+   ```
+   - Example of a text that would be added to the file `cron.log`
+      ```
+      2023-01-13T11:23:01 every other odd  minute
+      2023-01-13T11:24:01 every other even minute
+      ```
 
 
 
