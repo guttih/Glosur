@@ -16,12 +16,14 @@ Notes on chron jobs
  - List cron jobs for current logged in user `crontab -l`
  - List cron jobs for specific user `crontab -l -u <username>`
  - Remove cron jobs for current logged in user `crontab -r`
- - Remove cron jobs for a specific user : `crontab -r -u <username>`
-
-
+ - Remove cron jobs for a specific user `crontab -r -u <username>`
+ - cat the actual file for current user `sudo cat /var/spool/cron/$USER`
+ - cat the actual file for a specific user `sudo cat /var/spool/cron/<username>`
 
 ### Chron job syntax
 
+
+**Calculate interval of jobs** [Online Expression](https://cronexpressiontogo.com/every-odd-minute)
 
 #### M H D Mo W format
 ```
