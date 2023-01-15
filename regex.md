@@ -3,12 +3,13 @@
 My notes about RegEx
 
 Quick start
- - `[ ] ^ !-` are special characters which will need to be escaped when you want to match them.
- - `[` character, a-z, 0-9, ... `]` , example `[a-z]` all that match lowercase
+ - `[ ] ^ !- \` are special characters which will need to be escaped when you want to match them.
+ - `[` character set `]` , example `[a-z]` all that match lowercase
  character and `[A-Z]` or both `[a-zA-Z]` do not use `[A-z]` because it will
  include many other symbols.  See [ascii table](http://www.asciitable.com/)
  - `*`, example match all that has one upper case character and something after that: `[A-Z]*`
- - `[^` match `]`, example match everything that does not all that has one upper case character and something after that: `[A-Z]*`
+ - `[^` match `]`, negate everything inside the square brackets.  Example match
+ everything that does not have one upper case character and something after that: `[A-Z]*`
 
  RegEx examples:
   - `file.\.txt`Match filenames that have one character between *file* and *.txt* 
@@ -16,6 +17,31 @@ Quick start
   - `file[^a-z]\.txt` Match filenames that have one character between *file* and *.txt*
    that do not have lower case characters.
 
+
+### Shorthand character sets
+
+Warning, old expressions do not support all these shorthands.
+
+| Shorthand | Meaning            | Equivalent    |
+|----------:| ------------------ | --------------|
+|       \d  | Digit              | [0-9]         |
+|       \D  | Not digit          | [^0-9]        |
+|       \w  | Word character     | [a-zA-Z0-9_]  |
+|       \W  | Not word character | [^a-zA-Z0-9_] |
+|       \s  | Whitespace         | [\t\r\n]      |
+|       \S  | Not whitespace     | [^\t\r\n]     |
+
+### Repetition meta characters
+
+| meta character | Meaning                            |
+|---------------:| -----------------------------------|
+|              * | Preceding item, zero or more times |
+|              + | Preceding item, one or more times  |
+|              ? | Preceding item, zero or one times  |
+
+Examples:
+ - `.+` - Matches any string of characters except a line return.
+ 
 
 
 
