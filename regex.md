@@ -42,3 +42,29 @@ listing two existing files in current directory:
 - *RegEx* command: `ls | grep 'file.[1-2].*\.txt'` will list all files in 
 current directory and then, will `grep` execute the *RegEx* command on the output
 from the `ls` command,  resulting in listing same four files as from the *Glob* command above.
+
+## Glob in bash
+
+File Globs: Character classes
+- `[:lower:]`  - Lower case characters
+- `[:upper:]`  - Upper case characters
+- `[:digit:]`  - Numbers
+- `[:alpha:]`  - Upper and low case
+- `[:alnum:]`  - Upper and lower case plus numbers
+- `[:space:]`  - spaces, tabs and newline
+- `[:graph:]`  - Printable characters *NOT* including spaces
+- `[:print:]`  - Printable characters including spaces
+- `[:punct:]`  - Punctuation (a set of symbols used to separate and clarify the 
+                 meaning of sentences and written elements)
+- `[:cntrl:]`  - Non-printable control characters
+- `[:xdigit:]` - Hexadecimal characters
+
+Examples:
+- `file[[:alnum:][:punct:]].txt`:Match filenames have the following between
+    *file* and *.txt* : 
+     - one *character or a letter* or
+     - is a punctuation
+- `file[![:alnum:][:punct:]].txt`:Does not match filenames have the following between
+    *file* and *.txt* : 
+     - one *character or a letter* or
+     - is a punctuation
