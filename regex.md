@@ -33,7 +33,7 @@ Warning, old expressions do not support all these shorthands.
 
 ### Repetition meta characters
 
-| meta character | Meaning                            |
+| Meta character | Meaning                            |
 |---------------:| -----------------------------------|
 |              * | Preceding item, zero or more times |
 |              + | Preceding item, one or more times  |
@@ -41,6 +41,50 @@ Warning, old expressions do not support all these shorthands.
 
 Examples:
  - `.+` - Matches any string of characters except a line return.
+
+
+### Anchors
+#### Start and End Anchors
+
+ Reference a position, not an actual character
+
+| Meta character | Meaning                            | Suppored by      |
+|---------------:| -----------------------------------| :--------------: |
+|              ^ | Start of string/line               | Javascript,*PCRE* |
+|              $ | End of a string/line               | Javascript,*PCRE* |
+|             \A | Start of string, never end of line | Javascript       |
+|             \Z | End of string, never end of line   | Javascript       |
+
+*PCRE* - Perl compatible regular expression
+*Examples*
+ - `^[aA]pple`   - Would match string/line starting with *apple* or *Apple*
+ - `\A[aA]pple`   - Would match string starting with *apple* or *Apple* 
+
+#### Word Boundaries Anchors
+
+ Reference a position, not an actual character.
+
+| Meta character | Meaning                                 |
+|---------------:| ----------------------------------------|
+|              \b | Word boundary (start/end of word)      |
+|              \B | Not a world boundary (opposite to \b ) |
+
+Word boundaries exist:
+ - Before the first word character in the string
+ - After the last word character in the string
+ - Between a word character and a non-word character
+
+Where word character are: `[A-Za-z0-9_]`
+
+ ### Quantified Repetition
+ `{min,max}` Where min and max are positive numbers.  *Min* must always be included and can be zero.  *Max* is optional.
+
+ **Three syntaxes**
+  - `\d{4,8}` - Matches numbers with four to eight digits.
+  - `\d{4}`   - Matches numbers with excactly four digits. (min is max).
+  - `\d{4,}` - Matches numbers with four or more digits. (max is infinite).
+
+
  
 
 
