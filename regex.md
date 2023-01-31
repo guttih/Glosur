@@ -9,7 +9,7 @@ Quick start
  include many other symbols.  See [ascii table](http://www.asciitable.com/)
  - `*`, example match all that has one upper case character and something after that: `[A-Z]*`
  - `[^` match `]`, negate everything inside the square brackets.  Example match
- everything that does not have one upper case character and something after that: `[A-Z]*`
+ everything that does not have one upper case character and something after that: `[^A-Z]*`
 
  RegEx examples:
   - `file.\.txt`Match filenames that have one character between *file* and *.txt* 
@@ -39,8 +39,8 @@ Warning, old expressions do not support all these shorthands.
 |              + | Preceding item, one or more times  |
 |              ? | Preceding item, zero or one times  |
 
-Examples:
- - `.+` - Matches any string of characters except a line return.
+**Example**:
+ - `.+` Matches any string of characters except a line return.
 
 
 ### Anchors
@@ -74,6 +74,10 @@ Word boundaries exist:
  - After the last word character in the string
  - Between a word character and a non-word character
 
+ **Example**:
+
+ - `\b\w+es\b` Match words that end with **es**.
+
 Where word character are: `[A-Za-z0-9_]`
 
  ### Quantified Repetition
@@ -85,16 +89,38 @@ Where word character are: `[A-Za-z0-9_]`
   - `\d{4,}` - Matches numbers with four or more digits. (max is infinite).
 
 
- 
+ ### Lookahead and Lookbehind Assertions
+
+Think of this as more detailed search but you cannot use selected groups.
+Remember that most engines do not allow lookbehind assertions of variable width.
 
 
+| Shorthand | Meaning                      |
+|:---------- | --------------------------- |
+| (?=match)  | Look ahead match            |
+| (?!match)  | Negative Look ahead match   |
+| (?<=match)  | Look behind match          |
+| (?<!match)  | Negative Look behind match |
+
+
+**Examples**
+- Check if a string has at least- one upper case, one lower case, one digit and one 
+  symbol and 10 characters long.
+  - `\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{10,}\Z`
+
+
+------------------------------------------------------------------------------------
+
+<center>                                  BASH                             </center>
+
+------------------------------------------------------------------------------------
 
 ## RegEx and Glob in bash
 
 Glob matches a filename or file path but RegEx matches any text.  
 Don't confuse the both, even though the expressions can look similar.
 
-To explain the difference let's create four files in a new directory by running these commands from the terminal:
+To explain the difference let's create 132+4=138 files files in a new directory by running these commands from the terminal:
 ```shell
 mkdir tmp
 cd tmp
@@ -113,9 +139,10 @@ listing two existing files in current directory:
 current directory and then, will `grep` execute the *RegEx* command on the output
 from the `ls` command,  resulting in listing same four files as from the *Glob* command above.
 
-## Glob in bash
 
-File Globs: Character classes
+### Glob in bash
+
+#### File Globs: Character classes
 - `[:lower:]`  - Lower case characters
 - `[:upper:]`  - Upper case characters
 - `[:digit:]`  - Numbers
@@ -138,3 +165,17 @@ Examples:
     *file* and *.txt* : 
      - one *character or a letter* or
      - is a punctuation
+
+
+### References
+
+- [Comparison of regular expression engines]
+- [RegexBuddy]
+- Cources
+    - [Learning Regular Expressions]
+    - [Bash Patterns and Regular Expressions]
+
+[Comparison of regular expression engines]:https://en.wikipedia.org/wiki/Comparison_of_regular_expression_engines
+[Bash Patterns and Regular Expressions]:   https://www.linkedin.com/learning/bash-patterns-and-regular-expressions/
+[Learning Regular Expressions]:https://www.linkedin.com/learning/learning-regular-expressions-15586553
+[RegexBuddy]: https://www.regular-expressions.info/refbasic.html
