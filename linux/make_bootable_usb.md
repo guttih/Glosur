@@ -30,7 +30,6 @@ I selected the [Centos Stream 9](https://www.centos.org/centos-stream/) to setup
    ```shell
    sudo umount /dev/sdb1
    sudo dd bs=4M  status=progress oflag=sync of=/dev/sdb if=~/Downloads/CentOS-Stream-9-latest-x86_64-dvd1.iso
-   sudo 
    ```
    When the command finishes, you should have a bootable OS installation disk.
 5. Insert the bootable OS installation USB into the computer you want to install the OS on
