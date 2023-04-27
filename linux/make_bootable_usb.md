@@ -1,4 +1,7 @@
 # Formatting USB
+
+**W A R N I N G, You could loose all data**, if you do not select the correct device under path /dev/sd?
+
 ## Make a bootable USB drive
 This tutorial describes how to create a bootable USB operating system disk. 
 I selected the [Centos Stream 9](https://www.centos.org/centos-stream/) to setup. This manual is based on information from this [page](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick-on-linux/).
@@ -56,3 +59,45 @@ sudo mkfs.ext3 -m 0 /dev/sdb1
 
 If you run into problems, you might need to wipe the device with command `sudo dd if=/dev/zero of=/dev/sdb1` before giving the mkfs.???? command.  Note this takes a loooong time
 
+
+
+## Format a new writable USB drive
+
+To delete everything on a usb disk, select and create a file system on it
+making it ready for read and write operations.
+
+1. Find out what the name of the usb disk something like _/dev/sdb_ or _/dev/sdc_
+   1. Insert the usb, then do one of the following
+      - Find usb device by view the device size by giving command
+         ```shell 
+            lsblk  #or use df -Th 
+         ```
+      - Or Find by removing and inserting again 
+         1. give command `lsblk`
+         2. remove the usb
+         3. give command `lsblk`
+         4. compare the two lists, and see which device is missing in the latter list.
+         5. insert the usb again
+   
+2. In this example we will make the assumption that the usb is 
+   located at _/dev/sdb_ we will need to unmount it by giving command:
+   ```shell
+   umount /dev/sdb
+   ```
+3. Select and write a file system to the device.  Select one of the following commands:
+   - `sudo mkfs.ext4 /dev/sdb -L NewLabel ` - To format a USB drive in accordance with **ext4** file system use: 
+   - `sudo mkfs.vfat /dev/sdb -L NewLabel` - To  format a USB drive with **FAT32** file system run: 
+   - `sudo mkfs.exfat /dev/sdb -L NewLabel` - To format a USB drive in accordance with the **exFAT** file system use: 
+   - `sudo mkfs.ntfs /dev/sdb -L NewLabel` - To format a USB drive using the **NTFS** file system run: 
+4. Remove the usb from the computer, wait a few seconds and insert it again
+5. The new drive should now be read- and writable and you the new 
+   usb drive should be one of the drives listed with command:
+   ```shell
+    ll /run/media/$USER
+   ```
+6. Let's assume that you labelled the usb _NewLabel_ so, to allow everybody to
+   read and write to it, you should give the command:
+   ```shell
+    sudo chmod 775 /run/media/$USER/NewLabel
+    sudo chown $USER.$USER /run/media/$USER/NewLabel
+   ```
