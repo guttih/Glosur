@@ -61,6 +61,25 @@ du -h <path_to_dir>
 find .  -name "*.pdf"
 ```
 
+#### Find with multiple search criteria
+
+Search for multiple files
+
+```shell
+find / ! -path "/media/*" ! -path "/home/tams/work/*" -type f \(\
+      -name addressing-registry.xml \
+   -o -name "dsa-template.xml" \
+   -o -name "global-access-control.xml" \
+   -o -name "messaging-configuration.ldif" \
+   -o -name "tams-channel-config.xml" \
+   -o -name "tams-cidin-config.xml" \
+   -o -name "tams-operator-config.xml" \
+   -o -name "tams-smtp-config.xml" \
+   -o -name "tams-switch-config.xml" \
+   -o -name "tams-ws-config.xml" \
+\) 2>/dev/null
+```
+
 #### Find with grep
 
 Search all text files on computer for the text "192.168.52." 
