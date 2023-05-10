@@ -61,6 +61,20 @@ du -h <path_to_dir>
 find .  -name "*.pdf"
 ```
 
+#### Find with grep
+
+Search all text files on computer for the text "192.168.52." 
+but do not search directories */media* and */run*
+
+```shell
+find / ! -path "/run/*" ! -path "/media/*" -type f -exec grep -H "192.168.52." {} \; 2>/dev/null
+```
+
+Only show the filepath with matching content
+```shell
+find / ! -path "/run/*" ! -path "/media/*" -type f -exec grep -Hl "192.168.52." {} \; 2>/dev/null
+```
+
 
 This will search sub directories also
 
