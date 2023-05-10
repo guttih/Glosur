@@ -63,20 +63,17 @@ find .  -name "*.pdf"
 
 #### Find with multiple search criteria
 
-Search for multiple files
+Search for all media except two directories for multiple files
 
 ```shell
-find / ! -path "/media/*" ! -path "/home/tams/work/*" -type f \(\
-      -name addressing-registry.xml \
-   -o -name "dsa-template.xml" \
-   -o -name "global-access-control.xml" \
-   -o -name "messaging-configuration.ldif" \
-   -o -name "tams-channel-config.xml" \
-   -o -name "tams-cidin-config.xml" \
-   -o -name "tams-operator-config.xml" \
-   -o -name "tams-smtp-config.xml" \
-   -o -name "tams-switch-config.xml" \
-   -o -name "tams-ws-config.xml" \
+find / ! -path "/media/*" !  -path "/root/db-config/*" -type f \( \
+-name "tams-channel-config.xml" \
+-o -name "tams-switch-config.xml" \
+-o -name "tams-cidin-config.xml" \
+-o -name "tams-gateway-config.xml" \
+-o -name "tams-operator-config.xml" \
+-o -name "tams-smtp-config.xml" \
+-o -name "tams-amhs-config.xml" \
 \) 2>/dev/null
 ```
 
