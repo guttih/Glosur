@@ -15,6 +15,7 @@ Pid = process Id number = that is the Id of a running process
 - `ps -a|grep node|awk '{print $1}'|xargs ps -Flww -p` details about all processes which have node in the name
 - `netstat -tulpn | grep -f <(pgrep -a node | grep 'node app.js' | awk '{print $1}') ` list ports of all all node apps called "app.js"
 - `netstat -tulpn|grep -f <(ps -a|grep node|awk '{print $1}'|xargs ps -Flww -p|grep "node app.js"|awk '{print $4}')` list ports not as elegant
+- `PID=$(ps -aux|grep "node "|grep "/voffcon.js"|tr -s ' ' | cut -d' ' -f2);sudo kill $PID` Kill a process matching worlds `node ` and `/voffcon.js`
 
 
 
