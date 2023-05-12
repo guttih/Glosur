@@ -1,0 +1,39 @@
+:source-highlighter: highlight.js
+
+# Javascript notes
+
+## Logging
+
+Inside a browser it is important to be able to log.  Logging objects can be done by this
+
+```javascript
+let obj={
+    id:10,
+    name:'Gudjon',
+    age:51,
+    level2:{
+        id:10,
+        name:'sub elm',
+        level3:{id:1011,name:'subsub elm'}
+    }
+}
+
+console.log(JSON.stringify(obj, null, 4))
+```
+
+Result in chrome console
+```
+{
+    "id": 10,
+    "name": "Gudjon",
+    "age": 51,
+    "level2": {
+        "id": 10,
+        "name": "sub elm",
+        "level3": {
+            "id": 1011,
+            "name": "subsub elm"
+        }
+    }
+}
+```
