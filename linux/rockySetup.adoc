@@ -49,7 +49,7 @@ GIT_PS1_SHOWCOLORHINTS=1
 ----
 
 .. Or add the lines directly from the shell
-
+    
 +
 [source, shell]
 ----
@@ -64,18 +64,17 @@ cat /etc/bashrc ; } > /etc/bashrc.new && \mv /etc/bashrc.new /etc/bashrc
 
 . Now as a *normal user*
 
-.. add this line  `PS1='[\u@\h $(pwd)$(__git_ps1 " (%s)")]\$ '` to end of the file ~/.bashrc
+.. add this line  `PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '` to end of the file ~/.bashrc
 .. Or add the line directly from the shell
 
 +
 [source, shell]
 ----
-[[ $( grep -L "\[\\\u@\\\h \$(pwd)\$(__git_ps1 \" (%s)\")\]" ~/.bashrc ) ]] &&  echo 'PS1='"'"'[\u@\h $(pwd)$(__git_ps1 " (%s)")]\$ '"'"'' >> ~/.bashrc
+[[ $( grep -L "\[\\\u@\\\h \\\w\$(__git_ps1 \" (%s)\")\]" ~/.bashrc ) ]] &&  echo 'PS1='"'"'[\u@\h \w$(__git_ps1 " (%s)")]\$ '"'"'' >> ~/.bashrc
 ----
 
 +
-.. Alternative line without path, just current dir name  `PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '` 
-
+.. See https://phoenixnap.com/kb/change-bash-prompt-linux#ftoc-heading-11[here], for how to format the prompt
 
 
 
