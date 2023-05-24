@@ -1,0 +1,82 @@
+:title-page:
+:doctitle: Setting up {system-name}
+:author: Guðjón Hólm Sigurðsson
+:header-text: {system-name} API methods
+:version: 1.0
+:date:  2023 Mai 21
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc: left
+:toc-title: Table of Contents
+:toclevels: 2
+:numbered:
+:experimental:
+:xrefstyle: short
+:imagesdir: images
+:chapter-signifier:
+:system-name: Rocky linux
+
+= {doctitle}
+
+My notes about setting up {system-name}.
+
+== Terminal
+
+=== The prompt
+
+. As user root get the `git-prompt.sh` file
+
++
+[source, shell]
+----
+su -
+
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O /usr/local/bin/.git-prompt.sh
+chmod g+rx /usr/local/bin/.git-prompt.sh
+----
+
+. Still as *user root* add these four lines to file `/etc/bashrc` +
+
+.. Lines to add
++
+[source, bash]
+----
+source /usr/local/bin/.git-prompt.sh
+GIT_PS1_DESCRIBE_STYLE='describe'
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWCOLORHINTS=1
+----
+
+.. Or add the lines directly from the shell
+
++
+[source, shell]
+----
+FILE=/usr/local/bin/.git-prompt.sh && [[ $( grep -L "$FILE" /etc/bashrc ) ]] &&  { \
+echo -e "source $FILE" ; \
+echo "GIT_PS1_DESCRIBE_STYLE='describe'" ; \
+echo "GIT_PS1_SHOWDIRTYSTATE=1" ; \
+echo "GIT_PS1_SHOWCOLORHINTS=1" ; \
+cat /etc/bashrc ; } > /etc/bashrc.new && \mv /etc/bashrc.new /etc/bashrc
+
+----
+
+. Now as a *normal user*
+
+.. add this line  `PS1='[\u@\h $(pwd)$(__git_ps1 " (%s)")]\$ '` to end of the file ~/.bashrc
+.. Or add the line directly from the shell
+
++
+[source, shell]
+----
+[[ $( grep -L "\[\\\u@\\\h \$(pwd)\$(__git_ps1 \" (%s)\")\]" ~/.bashrc ) ]] &&  echo 'PS1='"'"'[\u@\h $(pwd)$(__git_ps1 " (%s)")]\$ '"'"'' >> ~/.bashrc
+----
+
++
+.. Alternative line without path, just current dir name  `PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '` 
+
+
+
+
+
