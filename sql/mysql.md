@@ -3,6 +3,14 @@
 - `show databases;` List all databases
 - `show tables;` List all tables in seleccted database
 - `select * from users limit 30` - List first 30 records in users table
+- Information about table columns
+   - `SELECT * FROM INFORMATION_SCHEMA.COLUMNS  WHERE TABLE_NAME = 'Logs';` - column info about the Logs table
+   - Spesific information
+   ```sql
+   SELECT COLUMN_NAME, DATA_TYPE,COLUMN_DEFAULT, IS_NULLABLE,
+          CHARACTER_MAXIMUM_LENGTH,  COLLATION_NAME,COLUMN_COMMENT
+   FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Logs';
+   ```
 
 ### some mysql examples
 ### shell examples
