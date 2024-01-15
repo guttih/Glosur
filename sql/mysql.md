@@ -11,6 +11,12 @@
           CHARACTER_MAXIMUM_LENGTH,  COLLATION_NAME,COLUMN_COMMENT
    FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Logs';
    ```
+   - All colums, that accept any kind of charaters
+   ```sql
+   SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, DATA_TYPE 
+   FROM INFORMATION_SCHEMA.COLUMNS 
+   WHERE DATA_TYPE IN ('char', 'varchar', 'text', 'nchar', 'nvarchar', 'ntext');
+   ```
 
 ### some mysql examples
 ### shell examples
