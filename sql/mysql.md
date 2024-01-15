@@ -7,9 +7,7 @@
 ### some mysql examples
 ### shell examples
 
-##### List top 20 records in messages table
-
-as root user
+##### List top 20 records in messages table as root user in database tamsLog
 ```shell
 mysql -D tamsLog -e "select * from Message LIMIT 20"
 ```
