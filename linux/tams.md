@@ -8,7 +8,7 @@ sudo find /var/log/tams -type f -print0 | xargs -0 sudo tail -f
 
 Monitor the journalctl for a spesific application
 ```shell
-journalctl | grep 'workstation'
+journalctl -f | grep 'workstation'
 ```
 
 ## MySql notes
