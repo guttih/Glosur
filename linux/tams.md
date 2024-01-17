@@ -6,6 +6,11 @@ Monitor changes in all files and subdirectories of a specific folder
 sudo find /var/log/tams -type f -print0 | xargs -0 sudo tail -f
 ```
 
+Monitor the journalctl for a spesific application
+```shell
+journalctl | grep 'workstation'
+```
+
 ## MySql notes
 
 Some notes on MySql for linux
