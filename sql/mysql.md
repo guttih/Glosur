@@ -15,7 +15,7 @@
    ```sql
    SELECT TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, DATA_TYPE 
    FROM INFORMATION_SCHEMA.COLUMNS 
-   WHERE DATA_TYPE IN ('char', 'varchar', 'text', 'nchar', 'nvarchar', 'ntext');
+   WHERE DATA_TYPE IN ('char', 'varchar', 'text', 'tinytext', 'mediumtext', 'longtext', 'nchar', 'nvarchar', 'ntext');
    ```
 
 ### some mysql examples
