@@ -102,12 +102,24 @@ This will search sub directories also
  
  
  
- ### Connections
- ## nc command
+## Networking
+
+### tcpdump
+
+Skoða hvort einhverjir ping pakkar eru að ferðast um bond0
+```shell
+tcpdump -nni bond0 icmp
+```
+Skoða hvort það sé einhver traffík á ákveðnu porti (pm-tré)
+```shell
+tcpdump -i any port 23130
+```
+ 
+ ### nc command
 `nc -vz {host} {port}`  
 `nc -vz 192.168.2.254 80` 
 `nc -vz www.cyberciti.biz 443`
-## nmap command
+### nmap command
 `nmap -PNp {port} {host}`  
 `nmap -p {port} {host}`  
 `nmap -p 22 www.cyberciti.biz`  
