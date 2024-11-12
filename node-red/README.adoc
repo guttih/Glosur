@@ -1,0 +1,29 @@
+= Node-RED
+
+Tests end notes about developing flows with Node-RED
+
+== Introduction
+
+=== Run the test app
+
+.Start the test app
+[source,shell]
+node test.js
+
+=== Start node
+
+.Start the MQTT Explorer application
+[source,shell]
+====
+ssh -X guttih.com
+/snap/bin/mqtt-explorer 
+====
+
+.Start the Node-RED application
+[source,shell]
+====
+ssh -X guttih.com
+firefox 192.168.1.79:1880/#flow/f6f2187d.f17ca8
+====
+
+
