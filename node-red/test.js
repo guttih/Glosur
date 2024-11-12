@@ -164,9 +164,9 @@ if (isTimeInRange(getDateTime(msg), 1, 1, 7, 59)) {
 }
 
 // Test 4
-msg = {payload: {timestamp: new Date("2022-01-01T04:00:00Z").getTime()}}; // the DateTime is 04:00
+msg = {payload: {timestamp: new Date("2024-11-12T17:20:33.481Z").getTime()}}; // the DateTime is 04:00
 console.log("Current time: " + getDateTime(msg));
-if (isTimeInRange(getDateTime(msg), 4, 1, 7, 59)) {
+if (isTimeInRange(getDateTime(msg), 17, 0, 7, 59)) {
     console.log("Motion detected in the bathroom \033[01;32mbetween\033[0m "+ fromStr + " and "+ toStr +".");
 } else {
     console.log("Motion detected in the bathroom \033[01;31moutside\033[0m "+ fromStr + " and "+ toStr +".");
