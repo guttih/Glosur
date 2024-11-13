@@ -1,4 +1,3 @@
-// a7042d507df5:~$ cat node_modules/node-red/settings.js 
 /**
  * This is the default settings file provided by Node-RED.
  *

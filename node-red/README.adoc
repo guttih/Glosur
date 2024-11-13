@@ -19,7 +19,7 @@ ssh -X guttih.com
 /snap/bin/mqtt-explorer 
 ====
 
-.Start the Node-RED application
+.Start the Node-RED flow editor
 [source,shell]
 ====
 ssh -X guttih.com
@@ -27,3 +27,54 @@ firefox 192.168.1.79:1880/#flow/f6f2187d.f17ca8
 ====
 
 
+== Persist ghslib changes to nodered container
+
+.Copy the ghslib changes to the nodered container data directory
+.. From local machine 
++
+[source,shell]
+----
+DATA_DIR=~/containers/nodered/data
+cp node-red/data/settings.js "$DATA_DIR"
+cp node-red/data/ghslib.js "$DATA_DIR"
+docker restart nodered
+----
+.. From external machine
++
+[source,shell]
+----
+DATA_DIR=/home/guttih/containers/nodered/data
+scp node-red/data/settings.js guttih.com:"${DATA_DIR}"
+scp node-red/data/ghslib.js guttih.com:"${DATA_DIR}"
+ssh guttih.com "docker restart nodered"
+----
+. Now you can use the ghslib functions in a function node by declaring the ghslib object at the top of the function node
++
+[source,javascript]
+----
+var ghslib = global.get('ghslib');
+// ...
+// Call the hello function from the ghslib object
+node.warn(ghslib.hello());
+----
+
+== Backup code and flows to git
+
+.From local machine
++
+[source,shell]
+----
+DATA_DIR=~/containers/nodered/data
+cp "$DATA_DIR"/flows.json node-red/data
+cp "$DATA_DIR"/settings.js node-red/data
+cp "$DATA_DIR"/ghslib.js node-red/data
+----
+.From external machine
++
+[source,shell]
+----
+DATA_DIR=/home/guttih/containers/nodered/data
+scp guttih.com:"${DATA_DIR}"/flows.json node-red/data
+scp guttih.com:"${DATA_DIR}"/settings.js node-red/data
+scp guttih.com:"${DATA_DIR}"/ghslib.js node-red/data
+----
