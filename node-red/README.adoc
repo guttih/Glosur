@@ -1,6 +1,7 @@
 = Node-RED
 
-Tests end notes about developing flows with Node-RED
+Developing flows and library for Node-RED
+
 
 == Introduction
 
@@ -8,7 +9,7 @@ Tests end notes about developing flows with Node-RED
 
 .Start the test app
 [source,shell]
-node test.js
+node node-red/testing/test.js 
 
 === Start node
 
@@ -29,9 +30,9 @@ firefox 192.168.1.79:1880/#flow/f6f2187d.f17ca8
 
 == Persist ghslib changes to nodered container
 
-.Copy the ghslib changes to the nodered container data directory
-.. From local machine 
-+
+=== Copy the ghslib changes to the nodered container data directory
+
+.From local machine
 [source,shell]
 ----
 DATA_DIR=~/containers/nodered/data
@@ -39,8 +40,8 @@ cp node-red/data/settings.js "$DATA_DIR"
 cp node-red/data/ghslib.js "$DATA_DIR"
 docker restart nodered
 ----
-.. From external machine
-+
+
+.From external machine
 [source,shell]
 ----
 DATA_DIR=/home/guttih/containers/nodered/data
@@ -48,8 +49,8 @@ scp node-red/data/settings.js guttih.com:"${DATA_DIR}"
 scp node-red/data/ghslib.js guttih.com:"${DATA_DIR}"
 ssh guttih.com "docker restart nodered"
 ----
-. Now you can use the ghslib functions in a function node by declaring the ghslib object at the top of the function node
-+
+
+.Use the ghslib functions in a *function node* by declaring the ghslib object at the top of the function node
 [source,javascript]
 ----
 var ghslib = global.get('ghslib');
@@ -61,7 +62,6 @@ node.warn(ghslib.hello());
 == Backup code and flows to git
 
 .From local machine
-+
 [source,shell]
 ----
 DATA_DIR=~/containers/nodered/data
@@ -70,7 +70,7 @@ cp "$DATA_DIR"/settings.js node-red/data
 cp "$DATA_DIR"/ghslib.js node-red/data
 ----
 .From external machine
-+
+
 [source,shell]
 ----
 DATA_DIR=/home/guttih/containers/nodered/data
